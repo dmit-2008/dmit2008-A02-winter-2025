@@ -1,0 +1,11 @@
+{
+  "name": "02-review-astronauts-example-complete",
+  "version": "0.0.1",
+  "description": "In this example we're going to see past and present astronauts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
