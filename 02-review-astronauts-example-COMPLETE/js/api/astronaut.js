@@ -20,3 +20,6 @@ const getAstronautList = async () => {
 
   return data
 }
+
+// make this function availble to be imported in to other functions here.
+export { getAstronautList }
