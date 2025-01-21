@@ -25,14 +25,18 @@ const renderAstronautListItem = (astronautData, element) => {
   // nationality is an array of objects.
   let nationality = astronautData.nationality[0].nationality_name
 
+  // let's use our knowledge of object destructuring
+  // we're going to destructure name, date_of_birth, bio
+  let {name, date_of_birth, bio} = astronautData
+
   element.innerHTML += `<li href="#" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <img src="${astronautData.image.thumbnail_url}" class="rounded float-start" alt=""">
-      <h5 class="mb-1">${astronautData.name} (${astronautData.status.name})</h5>
-      <small class="float-end">born ${astronautData.date_of_birth}</small>
+      <h5 class="mb-1">${name} (${astronautData.status.name})</h5>
+      <small class="float-end">born ${date_of_birth}</small>
     </div>
     <small>${nationality} (${astronautData.agency.abbrev})</small>
-    <p class="mb-1">${astronautData.bio} </p>
+    <p class="mb-1">${bio} </p>
   </li>`
 }
 
