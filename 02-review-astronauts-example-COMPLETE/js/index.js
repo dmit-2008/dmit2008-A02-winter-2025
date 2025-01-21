@@ -15,6 +15,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   // get the name of the first astronaut in the results
   console.log(data.results[0].name)
   // we're going to loop over the astronauts
+  // this is in data.results from api.
   let astronauts = data.results
+  // select the astronaut list item in the html
+  let astronautListElement = document.querySelector(".astronaut-list")
+  astronauts.map((astronaut) => {
+    renderAstronautListItem(
+      astronaut, // the data of the astronaut
+      astronautListElement // the element we'll be appending to.
+    )
+  })
 
 })
