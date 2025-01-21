@@ -10,5 +10,6 @@ import { getAstronautList } from './api/astronaut'
 document.addEventListener("DOMContentLoaded", async () => {
   // get the data
   let data = await getAstronautList()
-  console.log(data)
+  // get the name of the first astronaut in the results
+  console.log(data.results[0].name)
 })
