@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // select the astronaut list item in the html
   let astronautListElement = document.querySelector(".astronaut-list")
   astronauts.map((astronaut) => {
+    // add to the element on the page.
     renderAstronautListItem(
       astronaut, // the data of the astronaut
       astronautListElement // the element we'll be appending to.
