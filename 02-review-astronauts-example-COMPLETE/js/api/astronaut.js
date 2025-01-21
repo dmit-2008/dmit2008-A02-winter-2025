@@ -15,4 +15,8 @@ const getAstronautList = async () => {
     // normally here we add stuff like headers (authorization, content=type)
     // as the body if it's a post or patch request.
   })
+  // parse the response which is going to convert the data to a js object
+  const data = await response.json()
+
+  return data
 }
