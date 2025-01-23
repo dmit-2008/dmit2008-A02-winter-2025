@@ -11,6 +11,8 @@ import { renderAstronautListItem } from './dom/astronaut'
 let searchForm = document.querySelector("#search-astronauts")
 // I want you to add event listener
 searchForm.addEventListener("submit", async (event)=> {
+  event.preventDefault()
+
   // I want you to console.log the input from the search
   let searchInput = searchForm.elements["search"]
 
