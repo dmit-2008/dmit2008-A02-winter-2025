@@ -7,6 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { getAstronautList } from './api/astronaut'
 import { renderAstronautListItem } from './dom/astronaut'
 
+// I want you folks to select form
+// I want you to add event listener
+// I want you to console.log the input from the search
+
+
 // when the document is loaded
 document.addEventListener("DOMContentLoaded", async () => {
   // get the data

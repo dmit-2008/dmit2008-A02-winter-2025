@@ -20,7 +20,7 @@ replace the instances that have "THIS FORMAT HERE" with the astronautData.
 const renderAstronautListItem = (astronautData, element) => {
   // I want you append the innerHTML
   // with the html above
-  console.log(astronautData)
+  // console.log(astronautData)
   // use your knowledge of js objects to insert the data in the template string below.
   // nationality is an array of objects.
   let nationality = astronautData.nationality[0].nationality_name
