@@ -8,8 +8,16 @@ import { getAstronautList } from './api/astronaut'
 import { renderAstronautListItem } from './dom/astronaut'
 
 // I want you folks to select form
+let searchForm = document.querySelector("#search-astronauts")
 // I want you to add event listener
-// I want you to console.log the input from the search
+searchForm.addEventListener("submit", (event)=> {
+  // I want you to console.log the input from the search
+  let searchInput = searchForm.elements["search"]
+
+  console.log(searchInput.value)
+})
+
+
 
 
 // when the document is loaded
