@@ -19,6 +19,10 @@ const getAstronautList = async ({search}) => {
     paramsObj.search = search
   }
   console.log(paramsObj)
+  // let's use URLSearchParams to convert this object into a string
+  const params = new URLSearchParams(paramsObj)
+  console.log(params.toString())
+
   const URL = `${BASE_URL}/astronauts/?mode=list`
   // that's going to fetch all the data
   const response = await fetch(URL, {
