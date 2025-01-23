@@ -10,11 +10,13 @@ import { renderAstronautListItem } from './dom/astronaut'
 // I want you folks to select form
 let searchForm = document.querySelector("#search-astronauts")
 // I want you to add event listener
-searchForm.addEventListener("submit", (event)=> {
+searchForm.addEventListener("submit", async (event)=> {
   // I want you to console.log the input from the search
   let searchInput = searchForm.elements["search"]
 
   console.log(searchInput.value)
+  // I'm going call our function here
+  await getAndRenderAstronautList(searchInput.value)
 })
 
 
@@ -22,9 +24,12 @@ searchForm.addEventListener("submit", (event)=> {
 // that will render all astronauts.
 // the reason we're doing this is so we can call this function
 // and pass in a search argument.
-const getAndRenderAstronautList = async () => {
+const getAndRenderAstronautList = async (search) => {
   // get the data
-  let data = await getAstronautList()
+  // pass in the search value to the get astronaut
+  let data = await getAstronautList({
+    search: search // I'm passing the value whether or not it exists.
+  })
   console.log(data)
   // get the name of the first astronaut in the results
   console.log(data.results[0].name)

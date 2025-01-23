@@ -7,7 +7,18 @@ const BASE_URL = "https://lldev.thespacedevs.com/2.3.0"
 // return the data from the function
 // export that function and import in index.js
 // use that function print to the console.
-const getAstronautList = async () => {
+
+// use object destructuring to pass in the object
+const getAstronautList = async ({search}) => {
+  // create a params obj
+  let paramsObj = {
+    mode: "list"
+  }
+  // if there's a search value add it to the object
+  if (search) {
+    paramsObj.search = search
+  }
+  console.log(paramsObj)
   const URL = `${BASE_URL}/astronauts/?mode=list`
   // that's going to fetch all the data
   const response = await fetch(URL, {
