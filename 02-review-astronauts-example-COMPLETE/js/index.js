@@ -40,6 +40,9 @@ const getAndRenderAstronautList = async (search) => {
   let astronauts = data.results
   // select the astronaut list item in the html
   let astronautListElement = document.querySelector(".astronaut-list")
+  // we need to clear the list element before we render the items
+  astronautListElement.innerHTML = ""
+
   astronauts.map((astronaut) => {
     // add to the element on the page.
     renderAstronautListItem(
