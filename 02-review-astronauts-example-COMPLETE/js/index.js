@@ -18,10 +18,11 @@ searchForm.addEventListener("submit", (event)=> {
 })
 
 
-
-
-// when the document is loaded
-document.addEventListener("DOMContentLoaded", async () => {
+// what we're going to do is were's going to create a function
+// that will render all astronauts.
+// the reason we're doing this is so we can call this function
+// and pass in a search argument.
+const getAndRenderAstronautList = async () => {
   // get the data
   let data = await getAstronautList()
   console.log(data)
@@ -39,5 +40,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       astronautListElement // the element we'll be appending to.
     )
   })
+}
 
+
+// when the document is loaded
+document.addEventListener("DOMContentLoaded", async () => {
+  // put all of our code in another function
+  await getAndRenderAstronautList()
 })
