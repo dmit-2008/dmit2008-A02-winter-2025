@@ -1,6 +1,7 @@
 import Image from "next/image";
 // let's import the title
 import Title from "@/components/Title";
+import ConceptList from "@/components/ConceptList";
 
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -22,16 +23,12 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         {/* Let's use our custom component here */}
         <Title text={"Our first component"}/>
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+        <ConceptList>
           <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              pages/index.js
-            </code>
-            .
+            Creating a component!
           </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+          <li>Using Props!</li>
+        </ConceptList>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
