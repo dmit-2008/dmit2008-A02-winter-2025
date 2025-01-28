@@ -17,6 +17,11 @@ const SIMPSON_CHARACTERS = [
 
 export default function SimpsonsCharacters() {
   return <ul>
-
+    {SIMPSON_CHARACTERS.map((character, index)=> {
+      // return a list of JSX items
+      return <li key={index}>
+        {character}
+      </li>
+    })}
   </ul>
 }
