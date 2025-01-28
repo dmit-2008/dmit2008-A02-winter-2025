@@ -10,6 +10,3 @@ export default function ConceptList({children}) {
   </ol>
 }
 
-
-// Once done I want you to create a concept item component
-// is just a list item that takes a single called idea.

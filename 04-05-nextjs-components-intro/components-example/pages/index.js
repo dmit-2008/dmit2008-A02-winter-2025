@@ -2,6 +2,7 @@ import Image from "next/image";
 // let's import the title
 import Title from "@/components/Title";
 import ConceptList from "@/components/ConceptList";
+import ConceptListItem from "@/components/ConceptListItem";
 
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -24,10 +25,9 @@ export default function Home() {
         {/* Let's use our custom component here */}
         <Title text={"Our first component"}/>
         <ConceptList>
-          <li className="mb-2">
-            Creating a component!
-          </li>
-          <li>Using Props!</li>
+          <ConceptListItem idea={"Not sleeping in class"} />
+          <ConceptListItem idea={"Passing props into a component"} />
+          <ConceptListItem idea={"Wrapping components"} />
         </ConceptList>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
