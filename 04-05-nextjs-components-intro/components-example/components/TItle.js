@@ -6,3 +6,5 @@ export default function Title({text}) {
   // note this should wrap the text in an h1 in the jsx.
   return <h1>{text}</h1>
 }
+// an important note here, component names should be the
+// same as the file name.
