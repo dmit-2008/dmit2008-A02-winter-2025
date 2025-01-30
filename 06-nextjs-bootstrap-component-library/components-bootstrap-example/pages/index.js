@@ -6,9 +6,12 @@
 // add two h2s in those columns
 
 // let's import conatiner docs https://react-bootstrap.netlify.app/docs/layout/grid/#container
+import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+
+// import and use our component
+import UILibraryList from '@/components/UILibraryList';
 
 export default function Home() {
   return (
@@ -22,6 +25,7 @@ export default function Home() {
           <Row>
             <Col>
               <h2>Available Libraries</h2>
+              <UILibraryList />
             </Col>
             <Col>
               <h2>Other functionality</h2>
