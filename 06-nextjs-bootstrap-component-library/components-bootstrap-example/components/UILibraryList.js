@@ -24,6 +24,18 @@ const UI_LIBRARY_LIST = [
   {
     name: "Semantic UI",
     url: "https://react.semantic-ui.com/"
+  },
+  {
+    name: "Shadcn",
+    url: "https://ui.shadcn.com/"
+  },
+  {
+    name: "react windows 95",
+    url: "https://storybook.react95.io/?path=/story/docs-welcome-to-react95--page"
+  },
+  {
+    name: "Fluent Microsoft way of doing ui",
+    url: "https://react.fluentui.dev/?path=/docs/concepts-introduction--docs"
   }
 ]
 
@@ -35,7 +47,12 @@ export default function UILibraryList() {
     {UI_LIBRARY_LIST.map((uiLibraryItem, index)=> {
       // you need to have a unique key.
       return <ListGroup.Item key={index}>
-        {uiLibraryItem.name}
+        <a
+          href={uiLibraryItem.url}
+          target="_blank"
+        >
+          {uiLibraryItem.name}
+        </a>
       </ListGroup.Item>
     })}
   </ListGroup>
