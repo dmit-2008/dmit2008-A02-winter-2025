@@ -10,11 +10,13 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-
 export default function Home() {
   return (
     <div>
       <main>
+        {/* using external components the exact same way
+          as our custom components.
+        */}
         <Container>
           <h1>My First React Boostrap Project</h1>
           <Row>
