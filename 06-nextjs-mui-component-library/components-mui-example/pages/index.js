@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
 import Navbar from '@/components/Navbar';
+import SimpleForm from '@/components/SimpleForm';
 
 // write the title "Using MUI"
 
@@ -33,6 +34,7 @@ export default function Home() {
         >
           Using MUI
         </Typography>
+        <SimpleForm />
       </Container>
     </div>
   );
