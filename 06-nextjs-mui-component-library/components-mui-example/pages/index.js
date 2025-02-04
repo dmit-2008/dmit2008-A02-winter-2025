@@ -5,11 +5,14 @@ import Container from '@mui/material/Container';
 // go to these docs https://mui.com/material-ui/react-typography/
 import Typography from '@mui/material/Typography';
 
+import Navbar from '@/components/Navbar';
+
 // write the title "Using MUI"
 
 export default function Home() {
   return (
     <div>
+      <Navbar title={"MUI Demo"} />
       {/* component prop as main essentially renders this
       component as a main element
       docs here: https://mui.com/material-ui/api/container/
