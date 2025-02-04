@@ -9,6 +9,10 @@ import Typography from '@mui/material/Typography';
 export default function Navbar({title}) {
   return <AppBar>
     <Toolbar>
+      {/*
+        the sx prop allows us to style
+        the component in a one off way
+      */}
       <Typography
         variant="h6"
         component="div"
