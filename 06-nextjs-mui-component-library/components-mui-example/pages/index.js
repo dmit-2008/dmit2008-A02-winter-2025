@@ -21,7 +21,7 @@ export default function Home() {
         {/* variant is what it looks like and the component again like
         above is the element it will render to */}
         <Typography
-          variant="h1"
+          variant="h3"
           component="h1"
         >
           Using MUI
