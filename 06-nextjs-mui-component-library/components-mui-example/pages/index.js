@@ -16,15 +16,19 @@ export default function Home() {
       {/* component prop as main essentially renders this
       component as a main element
       docs here: https://mui.com/material-ui/api/container/
+
+      let's add an sx prop on the container
+      so that its pushed down
       */}
       <Container
         maxWidth="md"
         component="main"
+        sx={{marginTop: 8}}
       >
         {/* variant is what it looks like and the component again like
         above is the element it will render to */}
         <Typography
-          variant="h3"
+          variant="h1"
           component="h1"
         >
           Using MUI
