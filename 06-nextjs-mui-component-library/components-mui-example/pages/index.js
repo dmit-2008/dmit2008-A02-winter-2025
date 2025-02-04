@@ -2,6 +2,9 @@
 // take a look at the "component" prop on the container component
 import Container from '@mui/material/Container';
 // use Typography component with a variant prop of h1
+// go to these docs https://mui.com/material-ui/react-typography/
+import Typography from '@mui/material/Typography';
+
 // write the title "Using MUI"
 
 export default function Home() {
@@ -15,7 +18,14 @@ export default function Home() {
         maxWidth="md"
         component="main"
       >
-
+        {/* variant is what it looks like and the component again like
+        above is the element it will render to */}
+        <Typography
+          variant="h1"
+          component="h1"
+        >
+          Using MUI
+        </Typography>
       </Container>
     </div>
   );
