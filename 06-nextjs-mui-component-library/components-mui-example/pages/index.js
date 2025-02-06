@@ -13,7 +13,8 @@ import SimpleForm from '@/components/SimpleForm';
 export default function Home() {
   return (
     <div>
-      <Navbar title={"MUI Demo"} />
+      {/* Props are kind of like parameters except they'll passed as an object. */}
+      <Navbar title={"Talking bout props"} />
       {/* component prop as main essentially renders this
       component as a main element
       docs here: https://mui.com/material-ui/api/container/

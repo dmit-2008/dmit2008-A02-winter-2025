@@ -6,6 +6,11 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
+// I want you folks to create a IconButton
+// to use Deblur icon as the button piece.
+// on the left of the text.
+
+
 export default function Navbar({title}) {
   return <AppBar>
     <Toolbar>
