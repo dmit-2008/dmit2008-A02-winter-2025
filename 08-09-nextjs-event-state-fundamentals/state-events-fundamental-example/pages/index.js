@@ -20,12 +20,14 @@ export default function Home() {
       <Container
         maxWidth="md"
         component="main"
+        sx={{mt: 8}}
       >
         <form>
           {/* we're going to use the grid */}
           <Grid container spacing={2}>
             <Grid size={10}>
-              {/* for our text field */}
+              {/* for our text field for the props you can always take a look
+              at the documentation for clarification. */}
               <TextField
                 id="new-todo-input"
                 label="New Todo"
