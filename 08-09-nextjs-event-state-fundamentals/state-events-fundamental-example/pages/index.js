@@ -10,6 +10,7 @@
 */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid2';
+import TextField from '@mui/material/TextField';
 
 
 export default function Home() {
@@ -25,6 +26,11 @@ export default function Home() {
           <Grid container spacing={2}>
             <Grid size={10}>
               {/* for our text field */}
+              <TextField
+                id="new-todo-input"
+                label="New Todo"
+                variant="outlined"
+              />
             </Grid>
             <Grid size={2}>
               {/* for our button */}
