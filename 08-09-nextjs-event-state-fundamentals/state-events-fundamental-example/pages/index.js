@@ -8,14 +8,31 @@
   second one will contain a button
   the grid will be instide a form elemnt
 */
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid2';
+
 
 export default function Home() {
   return (
     <div
     >
-      <main>
+      <Container
+        maxWidth="md"
+        component="main"
+      >
+        <form>
+          {/* we're going to use the grid */}
+          <Grid container spacing={2}>
+            <Grid size={10}>
+              {/* for our text field */}
+            </Grid>
+            <Grid size={2}>
+              {/* for our button */}
+            </Grid>
+          </Grid>
 
-      </main>
+        </form>
+      </Container>
     </div>
   );
 }
