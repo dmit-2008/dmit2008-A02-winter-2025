@@ -19,7 +19,7 @@ import TextField from '@mui/material/TextField';
 export default function Home() {
   // create a stateful value using use state
   // called todoValue
-  const [todoValue, setTodoValue] = useState("")
+  const [todoValue, setTodoValue] = useState("fix wifi")
 
   const updateTodoValue = (event) => {
     // remember that the event.target will
