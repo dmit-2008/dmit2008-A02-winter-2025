@@ -12,6 +12,11 @@ import { useState } from 'react'
 
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+// Items needed for a list.
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+
 import Grid from '@mui/material/Grid2';
 import TextField from '@mui/material/TextField';
 
@@ -96,6 +101,22 @@ export default function Home() {
               >
                 Add Todo
               </Button>
+            </Grid>
+            {/* I'm going to make a grid size 12 */}
+            <Grid size={12}>
+              <List>
+                {/* we'll use map to loop through
+                the SAMPLE_TODOS */}
+                {SAMPLE_TODOS.map((todo, index)=> {
+                  // we're returning a single
+                  // jsx node in the list.
+                  return <ListItem key={index}>
+                    <ListItemText
+                      primary={todo}
+                    />
+                  </ListItem>
+                })}
+              </List>
             </Grid>
           </Grid>
         </form>
