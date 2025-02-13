@@ -29,6 +29,21 @@ export default function Home() {
     setTodoValue(event.target.value)
   }
 
+  // i want you to put an event listener
+  // that listens to the onSubmit event
+  // on the form and make a function that
+  // prints out the todoValue.
+
+  const handleForm = (event) => {
+    event.preventDefault()
+    // print the value of todo
+    console.log(`todoValue: ${todoValue}`)
+
+    // reset the value of the input
+    // we're going to setTodoValue to an empty string
+  }
+
+
   return (
     <div>
       <Container
@@ -36,19 +51,21 @@ export default function Home() {
         component="main"
         sx={{mt: 8}}
       >
-        <form>
+        <form
+          onSubmit={handleForm}
+        >
           {/* we're going to use the grid */}
           <Grid container spacing={2}>
             <Grid size={10}>
               {/* for our text field for the props you can always take a look
-              at the documentation for clarification.
+                at the documentation for clarification.
 
-              I want you to control the input
-              with this textfield.
-                - put an onChange
-                - set the value to the todoValue
-              since this is synced with todoValue
-              it's called a "controlled input"
+                I want you to control the input
+                with this textfield.
+                  - put an onChange
+                  - set the value to the todoValue
+                since this is synced with todoValue
+                it's called a "controlled input"
               */}
               <TextField
                 id="new-todo-input"
@@ -64,6 +81,7 @@ export default function Home() {
               <Button
                 variant="contained"
                 size="large"
+                type="submit"
               >
                 Add Todo
               </Button>
