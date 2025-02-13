@@ -36,6 +36,7 @@ export default function Home() {
   // called todoList, where the default/original
   // value is the SAMPLE_TODOS and you loop through
   // those todos in the JSX
+  const [todoList, setTodoList] = useState(SAMPLE_TODOS)
 
   // create a stateful value using use state
   // called todoValue
@@ -111,8 +112,9 @@ export default function Home() {
             <Grid size={12}>
               <List>
                 {/* we'll use map to loop through
-                the SAMPLE_TODOS */}
-                {SAMPLE_TODOS.map((todo, index)=> {
+                the todoList because it's the same
+                as the SAMPLE_TODOS (originally) */}
+                {todoList.map((todo, index)=> {
                   // we're returning a single
                   // jsx node in the list.
                   return <ListItem key={index}>
