@@ -16,25 +16,20 @@ State is what makes React so powerful, it's a great way of keeping in sync what 
 2. Stop your project (ctrl+c) and install MUI
   - install the package
   `npm install @mui/material @emotion/react @emotion/styled`
-  - add Roboto in the head
-```html
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    />
-```
-3. On your index page
+  - add Roboto font through fontsource
+    `npm install @fontsource/roboto`
+1. On your index page
 - Remove everything in the main element.
 - add a container ([docs here](https://mui.com/material-ui/react-container/
 ))
 
-4. Create a TodoList component in a newly created components folder.
+1. Create a TodoList component in a newly created components folder.
 - We're going to use the following MUI components to build or TodoList app.
   - [Box](https://mui.com/material-ui/react-box/)
   - [Button](https://mui.com/material-ui/react-button/#basic-button)
   - [Grid](https://mui.com/material-ui/react-grid/)
   - [TextField](https://mui.com/material-ui/react-text-field/)
-5. Let's use an event to listen to changes with the "onChange" react event
+1. Let's use an event to listen to changes with the "onChange" react event
 - in your `TodoList` component add a function that will take an "event" as a parameter. Note this "event" you can think of as the same as your event object from vanilla js, except with a bit more in it. Here's what the function looks like.
 ```jsx
   const onTodoTextChange = (event) => {
@@ -53,7 +48,7 @@ Note: this is going to just print out the value of the input to the console.
 />
 ```
 - Observe that when you write in the text field input the event is fired and a console message is printed
-6. Let's add an event on the button that listens to onClick events.
+1. Let's add an event on the button that listens to onClick events.
 - first create a function in our `TodoList` component
 ```jsx
   const onAddTodoClick = () => {
@@ -68,7 +63,7 @@ Note: this is going to just print out the value of the input to the console.
 >Add Todo</Button>
 ```
 - Observe that when you click this button the event is fired and a console message is printed
-7. Let's create a stateful variable using reacts' `useState` hook and let's make the text field set this stateful variable any time its' value changes.
+1. Let's create a stateful variable using reacts' `useState` hook and let's make the text field set this stateful variable any time its' value changes.
 - import useState from react
 ```jsx
 import {useState} from 'react'
@@ -79,7 +74,7 @@ import {useState} from 'react'
   const [todoText, setTodoText] = useState("")
 ```
 Note: the argument being passed into the  `useState("")` is original value of the `todoText` variable, change it to something else to see the difference!
-- In the `onTodoTextChange` use the `setTodoText` function 
+- In the `onTodoTextChange` use the `setTodoText` function
 ```jsx
   const onTodoTextChange = (event) => {
     console.log(event.target.value)
@@ -97,7 +92,7 @@ Note: the argument being passed into the  `useState("")` is original value of th
     value={todoText}
   />
 ```
-Note: use `setTodoText` when you want to change the variable `todoText` (this is in the `onTodoTextChange` function), as well 
+Note: use `setTodoText` when you want to change the variable `todoText` (this is in the `onTodoTextChange` function), as well
 
 
 8. Let's see the difference on the page. Under the button add the following code to see our state changing.
