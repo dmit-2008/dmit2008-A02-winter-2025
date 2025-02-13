@@ -84,8 +84,10 @@ export default function Home() {
   // we're going to create a delete function
   // that's going to take an index as an argument
   const deleteTodoItem = (index) => {
-    console.log("deleting index" + index)
-    console.log(index)
+    console.log("deleting index: " + index)
+    // I want you to create a copy of the array
+    // look up a way to delete an item at an index
+    // update that array.
   }
 
   return (
@@ -152,7 +154,9 @@ export default function Home() {
                       // from our map
                       <IconButton
                         edge="end"
-                        onClick={deleteTodoItem}
+                        onClick={
+                          ()=> {deleteTodoItem(index)}
+                        }
                       >
                         <DeleteIcon />
                       </IconButton>
