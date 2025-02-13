@@ -32,6 +32,11 @@ export default function Home() {
   // using an mui list and looping over the array
   // above.
 
+  // I want you to create a stateful variable
+  // called todoList, where the default/original
+  // value is the SAMPLE_TODOS and you loop through
+  // those todos in the JSX
+
   // create a stateful value using use state
   // called todoValue
   const [todoValue, setTodoValue] = useState("fix wifi")
