@@ -12,14 +12,17 @@ import { useState } from 'react'
 
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid2';
+// needed for our delete action.
+import IconButton from '@mui/material/IconButton';
 // Items needed for a list.
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-
-import Grid from '@mui/material/Grid2';
 import TextField from '@mui/material/TextField';
 
+// mui icons
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function Home() {
   const SAMPLE_TODOS = [
@@ -130,7 +133,18 @@ export default function Home() {
                 {todoList.map((todo, index)=> {
                   // we're returning a single
                   // jsx node in the list.
-                  return <ListItem key={index}>
+
+                  // i want you to add the delete
+                  // button and install any packages
+                  // you might need.
+                  return <ListItem
+                    key={index}
+                    secondaryAction={
+                      <IconButton edge="end">
+                        <DeleteIcon />
+                      </IconButton>
+                    }
+                  >
                     <ListItemText
                       primary={todo}
                     />
