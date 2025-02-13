@@ -86,8 +86,12 @@ export default function Home() {
   const deleteTodoItem = (index) => {
     console.log("deleting index: " + index)
     // I want you to create a copy of the array
+    let tempTodoList = [...todoList]
     // look up a way to delete an item at an index
+    // we'll use splice, docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    tempTodoList.splice(index, 1)
     // update that array.
+    setTodoList(tempTodoList)
   }
 
   return (
