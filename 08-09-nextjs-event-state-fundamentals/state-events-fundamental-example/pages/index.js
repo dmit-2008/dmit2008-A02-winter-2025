@@ -81,6 +81,11 @@ export default function Home() {
     setTodoValue("")
   }
 
+  // we're going to create a delete function
+  // that's going to take an index as an argument
+  const deleteTodoItem = (index) => {
+    console.log("deleting index" + index)
+  }
 
   return (
     <div>
@@ -140,13 +145,17 @@ export default function Home() {
                   return <ListItem
                     key={index}
                     secondaryAction={
-                      <IconButton edge="end">
+                      <IconButton
+                        edge="end"
+                        onClick={deleteTodoItem}
+                      >
                         <DeleteIcon />
                       </IconButton>
                     }
                   >
                     <ListItemText
                       primary={todo}
+                      secondary={`index: ${index}`}
                     />
                   </ListItem>
                 })}
