@@ -85,6 +85,7 @@ export default function Home() {
   // that's going to take an index as an argument
   const deleteTodoItem = (index) => {
     console.log("deleting index" + index)
+    console.log(index)
   }
 
   return (
@@ -145,6 +146,10 @@ export default function Home() {
                   return <ListItem
                     key={index}
                     secondaryAction={
+                      // we're going to create a oneline
+                      // function that's going to call
+                      // delete todo item with the index
+                      // from our map
                       <IconButton
                         edge="end"
                         onClick={deleteTodoItem}
