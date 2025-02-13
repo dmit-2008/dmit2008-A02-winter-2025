@@ -17,6 +17,16 @@ import TextField from '@mui/material/TextField';
 
 
 export default function Home() {
+  const SAMPLE_TODOS = [
+    "ask students to build stuff",
+    "ask students to go to meetups",
+    "wonder if my students are awake",
+    "think about fun projects to build",
+  ]
+  // I want you to try to build a list in jsx
+  // using an mui list and looping over the array
+  // above.
+
   // create a stateful value using use state
   // called todoValue
   const [todoValue, setTodoValue] = useState("fix wifi")
@@ -41,6 +51,7 @@ export default function Home() {
 
     // reset the value of the input
     // we're going to setTodoValue to an empty string
+    setTodoValue("")
   }
 
 
