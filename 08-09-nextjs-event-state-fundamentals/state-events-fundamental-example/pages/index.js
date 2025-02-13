@@ -60,6 +60,19 @@ export default function Home() {
     // print the value of todo
     console.log(`todoValue: ${todoValue}`)
 
+    // inside this form
+    // i'm going to create an copy of the array (think spread)
+    // with the todoValue as the first value
+    let tempList = [todoValue, ...todoList]
+    // includes all items of the todoList in the new array.
+    // we don't use push in this array because we need to make
+    // a copy because it's a const!
+    console.log(tempList)
+
+    // setTodoList with the new array
+    setTodoList(tempList)
+    // this will update the page!
+
     // reset the value of the input
     // we're going to setTodoValue to an empty string
     setTodoValue("")
