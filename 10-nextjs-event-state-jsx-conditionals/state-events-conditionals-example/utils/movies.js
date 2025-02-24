@@ -40,7 +40,7 @@ export const MOVIE_LIST = [
     {"name":"Gladiator", "year": 2000 },
     {"name":"American History X", "year": 1998 },
     {"name":"The Usual Suspects", "year": 1995 },
-    {"name":"Leon: The Professional", "year": 1994 },
+    {"name":"LÃ©on: The Professional", "year": 1994 },
     {"name":"The Lion King", "year": 1994 },
     {"name":"Terminator 2: Judgment Day", "year": 1991 },
     {"name":"Cinema Paradiso", "year": 1988 },
