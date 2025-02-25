@@ -20,8 +20,16 @@ export default function Home() {
   // make the inputs controlled
   const [search, setSearch] = useState("")
   // do the year
+  const [year, setYear] = useState("")
   // make the movie list stateful.
+  const [movies, setMovies] = useState(MOVIE_LIST)
 
+  // we're going to filter the movies
+  // what do we need
+  // MOVIE_LIST
+  // we'll have to compare the inputs
+  // to the name and year
+  // we're going to need to set the movies.
 
   return (
     <div>
@@ -61,7 +69,10 @@ export default function Home() {
                   label="year"
                   variant="standard"
                   sx={{width: '100%'}}
-
+                  value={year}
+                  onChange={(event) => {
+                    setYear(event.target.value)
+                  }}
                 />
               </Grid>
               <Grid item xs={2}>
@@ -76,7 +87,7 @@ export default function Home() {
             </Grid>
           </form>
           <List sx={{width: `100%`}}>
-          { MOVIE_LIST.map((movieData, index)=> {
+          { movies.map((movieData, index)=> {
               return <ListItem key={index}>
                 <ListItemText>
                   <Typography variant="p" component="div">
