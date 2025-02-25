@@ -1,25 +1,28 @@
+import {useState} from 'react'
 
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 
+// custom imports
 import { MOVIE_LIST } from '../utils/movies'
 
 export default function Home() {
   // make the inputs controlled
-
+  const [search, setSearch] = useState("")
+  // do the year
   // make the movie list stateful.
+
+
   return (
     <div>
       <Head>
@@ -45,6 +48,10 @@ export default function Home() {
                   label="search..."
                   variant="standard"
                   sx={{width: '100%'}}
+                  value={search}
+                  onChange={(event) => {
+                    setSearch(event.target.value)
+                  }}
 
                 />
               </Grid>
