@@ -1,4 +1,3 @@
-import { MOVIE_LIST } from '../utils/movies'
 
 import Head from 'next/head'
 import Image from 'next/image'
@@ -15,7 +14,12 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
+import { MOVIE_LIST } from '../utils/movies'
+
 export default function Home() {
+  // make the inputs controlled
+
+  // make the movie list stateful.
   return (
     <div>
       <Head>
@@ -41,7 +45,7 @@ export default function Home() {
                   label="search..."
                   variant="standard"
                   sx={{width: '100%'}}
-                  
+
                 />
               </Grid>
               <Grid item xs={4}>
@@ -50,7 +54,7 @@ export default function Home() {
                   label="year"
                   variant="standard"
                   sx={{width: '100%'}}
-                 
+
                 />
               </Grid>
               <Grid item xs={2}>
