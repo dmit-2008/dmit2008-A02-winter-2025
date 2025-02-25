@@ -13,16 +13,9 @@ import { useState } from 'react'
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid2';
-// needed for our delete action.
-import IconButton from '@mui/material/IconButton';
-// Items needed for a list.
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import TextField from '@mui/material/TextField';
 
-// mui icons
-import DeleteIcon from '@mui/icons-material/Delete';
+import ListOfTodos from '@/components/ListOfTodos';
 
 export default function Home() {
   const SAMPLE_TODOS = [
@@ -142,6 +135,13 @@ export default function Home() {
             </Grid>
           </Grid>
         </form>
+        {/* pass down the stateful value of todoList
+        pass down the function of deleteTodoItem
+        so the component can use them. */}
+        <ListOfTodos
+          todoList={todoList}
+          deleteTodoItem={deleteTodoItem}
+        />
       </Container>
     </div>
   );

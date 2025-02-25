@@ -1,8 +1,18 @@
 // move our todo list (the list part)
 // in this component.
+import IconButton from '@mui/material/IconButton';
 
-export default function ListOfTodos() {
-  return               <List>
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+
+// mui icons
+import DeleteIcon from '@mui/icons-material/Delete';
+
+export default function ListOfTodos({
+  todoList, deleteTodoItem
+}) {
+  return <List>
     {/* we'll use map to loop through
     the todoList because it's the same
     as the SAMPLE_TODOS (originally) */}
