@@ -137,10 +137,21 @@ export default function Home() {
                 >Filter</Button>
               </Grid>
               <Grid item xs={10}>
-                {/* Add the error message here*/}
-                <Alert severity="error">
-                  Some Type of error
-                </Alert>
+                {/*
+                  use a short circuit here which is essentially
+                  an if statement next lines can be read as
+                  if (errorMessage !== "") {
+                    show alert
+                  }
+                */
+                  errorMessage !== "" &&
+                  <Alert severity="error">
+                    {errorMessage}
+                  </Alert>
+
+                }
+
+
               </Grid>
             </Grid>
           </form>
