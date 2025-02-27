@@ -24,6 +24,8 @@ export default function Home() {
   // make the movie list stateful.
   const [movies, setMovies] = useState(MOVIE_LIST)
 
+  const [errorMessage, setErrorMessage] = useState("")
+
   // we're going to filter the movies
   // what do we need
   // MOVIE_LIST (use this as the beginning of your temporary array)
@@ -59,11 +61,25 @@ export default function Home() {
 
   // we're going to validate the year.
   const validateYear = () => {
-
+    // if the string is empty it's a valid search
+    if (year.trim() !== "") {
+      setErrorMessage("")
+      return true
+    }
     // I want you to check if year is a string
+    if (isNaN(year)) {
+      setErrorMessage(`${year} is not a number`)
+      return false
+    }
+
     // or if the year is greater than 2200 or less 1895
     // I want you to display an error message in an alert
     // return true if it's and false if it isn't
+
+    // return true on the default case.
+    setErrorMessage("")
+    return true
+
   }
 
   return (
