@@ -161,7 +161,22 @@ export default function Home() {
           </form>
           <List sx={{width: `100%`}}>
           {/* I want you folks to use a ternary to display
-          the number of results or "no results found." */}
+          the number of results or "no results found."
+          below can be read as an if ... else statement
+          */
+            movies.length !== 0 ?
+              <ListItem>
+                <ListItemText
+                  primary={`Found ${movies.length} results`}
+                />
+              </ListItem>
+              :
+              <ListItem>
+                <ListItemText
+                  primary={`No results found`}
+                />
+              </ListItem>
+          }
 
 
           { movies.map((movieData, index)=> {
