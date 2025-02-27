@@ -166,11 +166,9 @@ export default function Home() {
 
           { movies.map((movieData, index)=> {
               return <ListItem key={index}>
-                <ListItemText>
-                  <Typography variant="p" component="div">
-                    {movieData.name} ({movieData.year})
-                  </Typography>
-                </ListItemText>
+                <ListItemText
+                  primary={`${movieData.name} (${movieData.year})`}
+                />
               </ListItem>
             })
           }
