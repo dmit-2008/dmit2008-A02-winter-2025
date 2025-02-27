@@ -43,7 +43,13 @@ export default function Home() {
         return lowerMovie.includes(lowerSearch)
       })
     }
-    console.log(filteredMovies)
+    // implement the year search
+    if (year.trim() !== "") {
+      // filter through the movies.
+      filteredMovies = filteredMovies.filter((movie)=> {
+        return parseInt(year) === movie.year
+      })
+    }
     // we'll be setting the state after we perform our filter.
     setMovies(filteredMovies)
   }
