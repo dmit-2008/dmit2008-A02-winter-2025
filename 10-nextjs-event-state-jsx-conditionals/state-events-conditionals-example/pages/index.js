@@ -62,13 +62,14 @@ export default function Home() {
   // we're going to validate the year.
   const validateYear = () => {
     // if the string is empty it's a valid search
-    if (year.trim() !== "") {
+    if (year.trim() === "") {
       setErrorMessage("")
       return true
     }
     // I want you to check if year is a string
+
     if (isNaN(year)) {
-      setErrorMessage(`${year} is not a number`)
+      setErrorMessage(`"${year}" is not a number`)
       return false
     }
 
