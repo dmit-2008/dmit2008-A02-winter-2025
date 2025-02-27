@@ -35,7 +35,9 @@ export default function Home() {
   const handleForm = (event) => {
     event.preventDefault()
     // validate year first.
-    validateYear()
+    if (validateYear()) {
+      setMovies([])
+    }
 
     // create the temporary list
     let filteredMovies = [...MOVIE_LIST]
