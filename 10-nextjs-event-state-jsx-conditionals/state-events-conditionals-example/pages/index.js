@@ -160,6 +160,10 @@ export default function Home() {
             </Grid>
           </form>
           <List sx={{width: `100%`}}>
+          {/* I want you folks to use a ternary to display
+          the number of results or "no results found." */}
+
+
           { movies.map((movieData, index)=> {
               return <ListItem key={index}>
                 <ListItemText>
