@@ -74,6 +74,10 @@ export default function Home() {
     }
 
     // or if the year is greater than 2200 or less 1895
+    if (parseInt(year) > 2200 || parseInt(year) < 1895) {
+      setErrorMessage("Not a valid year")
+      return false
+    }
     // I want you to display an error message in an alert
     // return true if it's and false if it isn't
 
@@ -148,7 +152,6 @@ export default function Home() {
                   <Alert severity="error">
                     {errorMessage}
                   </Alert>
-
                 }
 
 
