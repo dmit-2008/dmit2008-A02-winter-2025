@@ -32,6 +32,9 @@ export default function Home() {
   // we're going to need to set the movies.
   const handleForm = (event) => {
     event.preventDefault()
+    // validate year first.
+    validateYear()
+
     // create the temporary list
     let filteredMovies = [...MOVIE_LIST]
     // I'm going to check if there's a search value.
@@ -52,6 +55,15 @@ export default function Home() {
     }
     // we'll be setting the state after we perform our filter.
     setMovies(filteredMovies)
+  }
+
+  // we're going to validate the year.
+  const validateYear = () => {
+
+    // I want you to check if year is a string
+    // or if the year is greater than 2200 or less 1895
+    // I want you to display an error message in an alert
+    // return true if it's and false if it isn't
   }
 
   return (
@@ -109,6 +121,9 @@ export default function Home() {
               </Grid>
               <Grid item xs={10}>
                 {/* Add the error message here*/}
+                <Alert severity="error">
+                  Some Type of error
+                </Alert>
               </Grid>
             </Grid>
           </form>
