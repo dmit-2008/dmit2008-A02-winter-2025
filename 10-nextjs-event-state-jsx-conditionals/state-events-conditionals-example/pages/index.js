@@ -67,12 +67,10 @@ export default function Home() {
       return true
     }
     // I want you to check if year is a string
-
     if (isNaN(year)) {
       setErrorMessage(`"${year}" is not a number`)
       return false
     }
-
     // or if the year is greater than 2200 or less 1895
     if (parseInt(year) > 2200 || parseInt(year) < 1895) {
       setErrorMessage("Not a valid year")
@@ -123,6 +121,7 @@ export default function Home() {
                 />
               </Grid>
               <Grid item xs={4}>
+                {/* we can add some error on the year itself */}
                 <TextField
                   id="year-field"
                   label="year"
@@ -132,6 +131,8 @@ export default function Home() {
                   onChange={(event) => {
                     setYear(event.target.value)
                   }}
+                  error={errorMessage !== ""}
+                  helperText={errorMessage}
                 />
               </Grid>
               <Grid item xs={2}>
