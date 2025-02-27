@@ -26,10 +26,27 @@ export default function Home() {
 
   // we're going to filter the movies
   // what do we need
-  // MOVIE_LIST
+  // MOVIE_LIST (use this as the beginning of your temporary array)
   // we'll have to compare the inputs
   // to the name and year
   // we're going to need to set the movies.
+  const handleForm = (event) => {
+    event.preventDefault()
+    // create the temporary list
+    let filteredMovies = [...MOVIE_LIST]
+    // I'm going to check if there's a search value.
+    if (search.trim() !== "") {
+      // i'll filter based on the search value.
+      filteredMovies = filteredMovies.filter((movie)=> {
+        let lowerMovie = movie.name.toLowerCase()
+        let lowerSearch = search.toLowerCase()
+        return lowerMovie.includes(lowerSearch)
+      })
+    }
+    console.log(filteredMovies)
+    // we'll be setting the state after we perform our filter.
+    setMovies(filteredMovies)
+  }
 
   return (
     <div>
@@ -48,7 +65,10 @@ export default function Home() {
           <Typography variant="h2" component="h2" style={{textAlign: "center"}}>
             Movies
           </Typography>
-          <form style={{width: '100%'}}>
+          <form
+            onSubmit={handleForm}
+            style={{width: '100%'}}
+          >
             <Grid container spacing={2}>
               <Grid item xs={6}>
                 <TextField
