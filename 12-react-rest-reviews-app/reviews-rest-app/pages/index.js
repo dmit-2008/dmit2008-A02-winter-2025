@@ -77,6 +77,10 @@ export default function Home() {
                   label="Adaptation Title"
                   fullWidth
                   variant="standard"
+                  value={title}
+                  onChange={(event)=> {
+                    setTitle(event.target.value)
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
@@ -86,6 +90,10 @@ export default function Home() {
                   label="Comments"
                   fullWidth
                   variant="standard"
+                  value={comments}
+                  onChange={(event)=> {
+                    setComments(event.target.value)
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
