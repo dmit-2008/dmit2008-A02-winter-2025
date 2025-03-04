@@ -1,6 +1,6 @@
+import { useState } from 'react'
+
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -13,8 +13,20 @@ import Typography from '@mui/material/Typography';
 
 export default function Home() {
   // create a stateful value for the quote data
+  const [quoteData, setQuoteData] = useState()
   // create a function that is async that will fetch the data
-  // it's on the same server you can use /api/random_quote with no domain.
+  const getRandomQuote = async () => {
+    // it's on the same server you can use /api/random_quote with no domain.
+    // note it's only capitalized like this because it's a constant
+    // value that doesn't change.
+    const RANDOM_QUOTE_URL = "/api/random_quote"
+    // make the request like you would any other.
+    const response = await fetch(RANDOM_QUOTE_URL)
+    const data = await response.json()
+
+
+  }
+
   // update the quote on the page when you click the button.
 
   return (
@@ -63,6 +75,7 @@ export default function Home() {
             >
               <Button
                 variant="contained"
+                onClick={getRandomQuote}
               >
                 Get New Quote
               </Button>
