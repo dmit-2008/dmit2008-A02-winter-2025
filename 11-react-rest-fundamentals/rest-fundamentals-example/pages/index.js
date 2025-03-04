@@ -23,8 +23,7 @@ export default function Home() {
     // make the request like you would any other.
     const response = await fetch(RANDOM_QUOTE_URL)
     const data = await response.json()
-
-
+    console.log(data)
   }
 
   // update the quote on the page when you click the button.
