@@ -29,6 +29,10 @@ export default function Home() {
 
   // update the quote on the page when you click the button.
 
+  // one thing to note is that you need to handle
+  // the loading state or the state before something
+  // is fetched.
+
   return (
     <div>
       <Head>
@@ -57,7 +61,7 @@ export default function Home() {
             }}
           >
             <Typography variant="h5" align="center" color="text.primary" paragraph>
-              Quote here.
+              {quoteData.quote}
             </Typography>
             <Typography
               component="h1"
@@ -66,7 +70,7 @@ export default function Home() {
               color="text.secondary"
               gutterBottom
             >
-              Author here
+              {quoteData.author}
             </Typography>
             <Box
              display="flex"
