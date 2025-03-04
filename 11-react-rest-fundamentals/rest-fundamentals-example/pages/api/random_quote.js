@@ -15,6 +15,14 @@ export default function handler(req, res) {
     {
       "quote": "I am not a demon. I am a lizard, a shark, a heat-seeking panther. I want to be Bob Denver on acid playing the accordion.",
       "author": "The wise nicholas cage"
+    },
+    {
+      "author": "Nassim Nicholas Taleb",
+      "quote": "Intelligence consists in ignoring things that are irrelevant."
+    },
+    {
+      "author": "Robert Greene",
+      "quote": "Understand: people will constantly attack you in life. One of their main weapons will be to instill in you doubts about yourself. They will often disguise this as their objective opinion, but invariably it has a political purpose – they want to keep you down."
     }
   ]
   // get a random quote from that list
