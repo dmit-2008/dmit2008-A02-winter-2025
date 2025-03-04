@@ -12,7 +12,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 export default function Home() {
-
+  // create a stateful value for the quote data
+  // create a function that is async that will fetch the data
+  // it's on the same server you can use /api/random_quote with no domain.
+  // update the quote on the page when you click the button.
 
   return (
     <div>
