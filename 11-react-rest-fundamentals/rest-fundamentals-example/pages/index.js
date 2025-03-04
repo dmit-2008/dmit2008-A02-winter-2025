@@ -13,7 +13,11 @@ import Typography from '@mui/material/Typography';
 
 export default function Home() {
   // create a stateful value for the quote data
-  const [quoteData, setQuoteData] = useState()
+  // we're adding a default value so there's no errors.
+  const [quoteData, setQuoteData] = useState({
+    "quote": "Please answer my questions",
+    "author": "Dan"
+  })
   // create a function that is async that will fetch the data
   const getRandomQuote = async () => {
     // it's on the same server you can use /api/random_quote with no domain.
