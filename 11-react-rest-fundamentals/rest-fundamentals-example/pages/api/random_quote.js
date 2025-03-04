@@ -26,10 +26,11 @@ export default function handler(req, res) {
     }
   ]
   // get a random quote from that list
+  const randomIndex = Math.floor(Math.random()*QUOTE_LIST.length)
+  const randomQuote = QUOTE_LIST[randomIndex]
 
   // return that quote
-
   // we're returning every request to /api/random_quote
   // with states of 200 and the json of the argument
-  res.status(200).json({ name: 'John Doe' })
+  res.status(200).json(randomQuote)
 }
