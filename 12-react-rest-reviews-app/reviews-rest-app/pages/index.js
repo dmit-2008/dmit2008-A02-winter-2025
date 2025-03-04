@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -36,6 +37,15 @@ const MOCK_ADAPTATION_RATING = [{
 }]
 export default function Home() {
   // I want you to create the stateful values we discussed
+  const [title, setTitle] = useState("")
+  const [comments, setComments] = useState("")
+  // take a look the radio group we're going to
+  // initialize at "1" so it can be controlled
+  const [rating, setRating] = useState("1")
+
+  // make the reviews stateful
+  const [reviews, setReviews] = useState(MOCK_ADAPTATION_RATING)
+
   // I want you to make all of these inputs controlled.
   // I want you to create function that fetches the data
   // updates the 'reviews' stateful value
