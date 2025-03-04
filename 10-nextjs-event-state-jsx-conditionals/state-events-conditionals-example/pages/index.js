@@ -35,6 +35,7 @@ export default function Home() {
   const handleForm = (event) => {
     event.preventDefault()
     // validate year first.
+    // this might something that might be handy for your assignment.
     if (validateYear()) {
       setMovies([])
     }
