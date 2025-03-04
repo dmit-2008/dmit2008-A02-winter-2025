@@ -29,12 +29,19 @@ import Typography from '@mui/material/Typography';
 
 
 
+const MOCK_ADAPTATION_RATING = [{
+  'title': 'Fight Club',
+  'comment': 'Great movie and book',
+  'rating': 10
+}]
 export default function Home() {
-  const MOCK_ADAPTATION_RATING = [{
-    'title': 'Fight Club',
-    'comment': 'Great movie and book',
-    'rating': 10
-  }]
+  // I want you to create the stateful values we discussed
+  // I want you to make all of these inputs controlled.
+  // I want you to create function that fetches the data
+  // updates the 'reviews' stateful value
+
+
+
   return (
     <div>
       <Head>
@@ -122,13 +129,13 @@ export default function Home() {
                     {adaptation.rating}
                   </Avatar>
                 }
-                
+
                 title={
                   <Typography variant="body2" color="text.secondary">
                     {adaptation.title}
                   </Typography>
                 }
-                
+
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
