@@ -103,6 +103,10 @@ export default function Home() {
                     row
                     aria-labelledby="adaptation-rating"
                     name="rating-buttons-group"
+                    value={rating}
+                    onChange={(event)=> {
+                      setRating(event.target.value)
+                    }}
                   >
                     <FormControlLabel value="1" control={<Radio />} label="1" />
                     <FormControlLabel value="2" control={<Radio />} label="2" />
@@ -139,7 +143,7 @@ export default function Home() {
               Load All Current Reviews
             </Button>
           </Box>
-          {MOCK_ADAPTATION_RATING.map((adaptation, index)=> {
+          {reviews.map((adaptation, index)=> {
             return <Card key={index}>
               <CardHeader
                 avatar={
