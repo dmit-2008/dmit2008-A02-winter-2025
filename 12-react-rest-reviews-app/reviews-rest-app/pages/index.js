@@ -56,13 +56,23 @@ export default function Home() {
   // call the backend api (it's on a different domain)
   // update the state of reviews.
   const loadReviews = async () => {
-    // making the fetch request to the backend
-    // it's on a different domain, so you need to specify the domain.
-    const response = await fetch(`${BASE_URL}/reviews`)
-    const data = await response.json()
-    console.log(data)
-    // to update the state of the page
-    setReviews(data)
+
+    // you can use try catch when you are trying to access
+    // something outside of the application this would files/rest apis/network call.
+
+    try {
+      // making the fetch request to the backend
+      // it's on a different domain, so you need to specify the domain.
+      const response = await fetch(`${BASE_URL}/reviews`)
+      const data = await response.json()
+      console.log(data)
+      // to update the state of the page
+      setReviews(data)
+    } catch (error) {
+      // we're going to show later on a strategy of how to
+      // display this error as a toast message.
+      console.log(error)
+    }
   }
 
   // handle the form submission
