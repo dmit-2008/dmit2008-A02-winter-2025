@@ -29,12 +29,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 
-
 const MOCK_ADAPTATION_RATING = [{
   'title': 'Fight Club',
   'comment': 'Great movie and book',
   'rating': 10
 }]
+
+const BASE_URL = "http://localhost:5000"
+
 export default function Home() {
   // I want you to create the stateful values we discussed
   const [title, setTitle] = useState("")
@@ -50,6 +52,14 @@ export default function Home() {
   // I want you to create function that fetches the data
   // updates the 'reviews' stateful value
 
+  // if you folks can make a function
+  // call the backend api (it's on a different domain)
+  // update the state of reviews.
+  const loadReviews = async () => {
+    const response = await fetch(`${BASE_URL}/reviews`)
+    const data = await response.json()
+    console.log(data)
+  }
 
 
   return (
@@ -139,6 +149,7 @@ export default function Home() {
           >
             <Button
               variant="contained"
+              onClick={loadReviews}
             >
               Load All Current Reviews
             </Button>
