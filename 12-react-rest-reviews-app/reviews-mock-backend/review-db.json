@@ -11,6 +11,12 @@
       "title": "The Lord of the rings",
       "comment": "A classic movie and a classic book series as well!",
       "rating": 10
+    },
+    {
+      "title": "The Hunger Games",
+      "comment": "Pretty good, books were better.",
+      "rating": 7,
+      "id": 3
     }
   ]
 }

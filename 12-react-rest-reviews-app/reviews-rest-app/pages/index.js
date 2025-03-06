@@ -56,9 +56,13 @@ export default function Home() {
   // call the backend api (it's on a different domain)
   // update the state of reviews.
   const loadReviews = async () => {
+    // making the fetch request to the backend
+    // it's on a different domain, so you need to specify the domain.
     const response = await fetch(`${BASE_URL}/reviews`)
     const data = await response.json()
     console.log(data)
+    // to update the state of the page
+    setReviews(data)
   }
 
 
@@ -155,7 +159,10 @@ export default function Home() {
             </Button>
           </Box>
           {reviews.map((adaptation, index)=> {
-            return <Card key={index}>
+            return <Card
+              sx={{marginTop: 2}}
+              key={index}
+            >
               <CardHeader
                 avatar={
                   <Avatar sx={{ bgcolor: 'blue' }} aria-label="recipe">
