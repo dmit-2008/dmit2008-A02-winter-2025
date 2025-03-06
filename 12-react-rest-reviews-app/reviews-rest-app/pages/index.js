@@ -130,6 +130,9 @@ export default function Home() {
     setRating("1")
   }
 
+  // I want you to look up the card documentation
+  // to add a delete button on the card itself
+
 
   return (
     <div>
