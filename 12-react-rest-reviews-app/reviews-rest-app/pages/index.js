@@ -100,7 +100,14 @@ export default function Home() {
     // updating the frontend stateful value
     // setting reviews to a new array with the old values
     // spread and the newReview in there.
-    setReviews([...reviews, newReview])
+    // setReviews([...reviews, newReview])
+
+    // Option 2: cache clearing lite (calling loadReviews again)
+    // just call the function loadReviews, and this will make
+    // a separate api call to get the data from the endpoint that
+    // we've just changed (a lot of the time the post request above
+    // is considere a mutation).
+    await loadReviews() // we're not using any returned values.
 
 
     // clear the inputs.

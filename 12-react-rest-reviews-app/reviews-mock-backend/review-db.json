@@ -35,6 +35,12 @@
       "comment": "skip the last two seasons, george rr martin ain't gonna finish them.",
       "rating": 7,
       "id": 6
+    },
+    {
+      "title": "The Giver",
+      "comment": "book we all read in school, movie ",
+      "rating": 4,
+      "id": 7
     }
   ]
 }
