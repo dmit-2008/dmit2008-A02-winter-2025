@@ -66,7 +66,7 @@ export default function Home() {
   }
 
   // handle the form submission
-  const handleForm = (event) => {
+  const handleForm = async (event) => {
     event.preventDefault()
     // validate so the input fields aren't empty.
     if (title.trim() === "" || comments.trim() === "") {
@@ -75,14 +75,44 @@ export default function Home() {
       return
     }
 
-
-
-
+    // wrap this in a try catch.
     // make the post request to the backend
+    const response = await fetch(`${BASE_URL}/reviews`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json" // just part of making fetch requests.
+      },
+      body: JSON.stringify({
+        title: title,
+        comment: comments,
+        rating: parseInt(rating)
+        // Note on rating this will work if you don't parse the int
+        // but this is only because we're using json-server
+        // on a "real" backend it would be rejected if you don't use the right type.
+      })
+    })
+    const newReview = await response.json()
+
+    console.log(newReview)
+
     // after this we'll discuss state updates.
+    // Option 1: From our understanding of state
+    // updating the frontend stateful value
+    // setting reviews to a new array with the old values
+    // spread and the newReview in there.
+    setReviews([...reviews, newReview])
 
 
+    // clear the inputs.
+    resetForm()
   }
+
+  const resetForm = () => {
+    setComments("")
+    setTitle("")
+    setRating("1")
+  }
+
 
   return (
     <div>
@@ -100,7 +130,9 @@ export default function Home() {
       </AppBar>
       <main>
         <Container maxWidth="md">
-          <form>
+          <form
+            onSubmit={handleForm}
+          >
             <Grid container spacing={3}>
               <Grid item xs={12} sm={12}>
                 <TextField
