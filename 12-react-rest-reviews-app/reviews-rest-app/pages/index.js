@@ -65,6 +65,24 @@ export default function Home() {
     setReviews(data)
   }
 
+  // handle the form submission
+  const handleForm = (event) => {
+    event.preventDefault()
+    // validate so the input fields aren't empty.
+    if (title.trim() === "" || comments.trim() === "") {
+      // either one is empty we don't want to make the request
+      // so the function ends here.
+      return
+    }
+
+
+
+
+    // make the post request to the backend
+    // after this we'll discuss state updates.
+
+
+  }
 
   return (
     <div>
