@@ -30,7 +30,7 @@ import Typography from '@mui/material/Typography';
 
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import { getReviews } from '../utils/api/reviews';
+import { getReviews, postReview, deleteReview } from '../utils/api/reviews';
 
 const MOCK_ADAPTATION_RATING = [{
   'title': 'Fight Club',
@@ -84,43 +84,40 @@ export default function Home() {
       return
     }
 
+
     // wrap this in a try catch.
-    // make the post request to the backend
-    const response = await fetch(`${BASE_URL}/reviews`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json" // just part of making fetch requests.
-      },
-      body: JSON.stringify({
+    try {
+
+      const newReview = await postReview({
         title: title,
-        comment: comments,
-        rating: parseInt(rating)
-        // Note on rating this will work if you don't parse the int
-        // but this is only because we're using json-server
-        // on a "real" backend it would be rejected if you don't use the right type.
+        comments: comments,
+        rating: rating
       })
-    })
-    const newReview = await response.json()
 
-    console.log(newReview)
+      console.log(newReview)
 
-    // after this we'll discuss state updates.
-    // Option 1: From our understanding of state
-    // updating the frontend stateful value
-    // setting reviews to a new array with the old values
-    // spread and the newReview in there.
-    // setReviews([...reviews, newReview])
+      // after this we'll discuss state updates.
+      // Option 1: From our understanding of state
+      // updating the frontend stateful value
+      // setting reviews to a new array with the old values
+      // spread and the newReview in there.
+      // setReviews([...reviews, newReview])
 
-    // Option 2: cache clearing lite (calling loadReviews again)
-    // just call the function loadReviews, and this will make
-    // a separate api call to get the data from the endpoint that
-    // we've just changed (a lot of the time the post request above
-    // is considere a mutation).
-    await loadReviews() // we're not using any returned values.
+      // Option 2: cache clearing lite (calling loadReviews again)
+      // just call the function loadReviews, and this will make
+      // a separate api call to get the data from the endpoint that
+      // we've just changed (a lot of the time the post request above
+      // is considere a mutation).
+      await loadReviews() // we're not using any returned values.
+      // clear the inputs.
+      resetForm()
+    } catch (error) {
+      console.error(error)
+      // handle and display somethign to the user here.
+
+    }
 
 
-    // clear the inputs.
-    resetForm()
   }
 
   const resetForm = () => {
@@ -147,9 +144,7 @@ export default function Home() {
       // the code below but it might error out.
       // you use this technique when dealing
       // with external data that's not guaranteed.
-      const response = await fetch(DELETE_URL, {
-        method: "DELETE"
-      })
+      await deleteReview(id)
       // handling the "not found case"
       // if (!response.ok) {
       //   throw Error("Not found.")

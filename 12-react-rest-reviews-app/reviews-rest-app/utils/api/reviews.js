@@ -42,6 +42,18 @@ const postReview = async ({
   return newReview
 }
 
+// implement the delete!
+const deleteReview = async (id) => {
+  const DELETE_URL = `${BASE_URL}/reviews/${id}`
+  // showing the url to yourself will save you
+  // a lot of time
+  console.log(DELETE_URL)
+  const response = await fetch(DELETE_URL, {
+    method: "DELETE"
+  })
+  const data = response.json()
+  return data
+}
 
 
-export { getReviews, postReview }
+export { getReviews, postReview, deleteReview }
