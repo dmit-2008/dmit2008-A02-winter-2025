@@ -57,10 +57,8 @@ export default function Home() {
   // call the backend api (it's on a different domain)
   // update the state of reviews.
   const loadReviews = async () => {
-
     // you can use try catch when you are trying to access
     // something outside of the application this would files/rest apis/network call.
-
     try {
       // making the fetch request to the backend
       // it's on a different domain, so you need to specify the domain.
@@ -243,8 +241,10 @@ export default function Home() {
                   </Avatar>
                 }
                 action={
+                  // make a online function that uses the
+                  // adataptation.id to pass in.
                   <IconButton
-                    onClick={removeReview}
+                    onClick={()=> {removeReview(adaptation.id)}}
                   >
                     <DeleteIcon />
                   </IconButton>

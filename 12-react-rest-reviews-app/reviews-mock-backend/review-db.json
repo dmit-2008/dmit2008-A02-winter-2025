@@ -35,6 +35,18 @@
       "comment": "skip the last two seasons, george rr martin ain't gonna finish them.",
       "rating": 7,
       "id": 6
+    },
+    {
+      "title": "The Sky is everywhere",
+      "comment": "it must be good.",
+      "rating": 9,
+      "id": 7
+    },
+    {
+      "title": "Akira",
+      "comment": "The classic.",
+      "rating": 10,
+      "id": 8
     }
   ]
 }
