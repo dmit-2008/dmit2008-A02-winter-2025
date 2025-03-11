@@ -133,6 +133,15 @@ export default function Home() {
   // to add a delete button on the card itself
   const removeReview = (id) => {
     console.log("removeReview, id: ", id)
+    // implement this remove review
+    // refresh the frontend.
+
+    // let's create the url for the delete request.
+    const DELETE_URL = `${BASE_URL}/reviews/${id}`
+    // showing the url to yourself will save you
+    // a lot of time
+    console.log(DELETE_URL)
+
   }
 
   return (
@@ -244,7 +253,9 @@ export default function Home() {
                   // make a online function that uses the
                   // adataptation.id to pass in.
                   <IconButton
-                    onClick={()=> {removeReview(adaptation.id)}}
+                    onClick={
+                      ()=> {removeReview(adaptation.id)}
+                    }
                   >
                     <DeleteIcon />
                   </IconButton>
