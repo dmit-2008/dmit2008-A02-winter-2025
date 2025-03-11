@@ -151,9 +151,9 @@ export default function Home() {
         method: "DELETE"
       })
       // handling the "not found case"
-      if (!response.ok) {
-        throw Error("Not found.")
-      }
+      // if (!response.ok) {
+      //   throw Error("Not found.")
+      // }
 
       // after this is complete I want you folks
       // to refresh the frontend
