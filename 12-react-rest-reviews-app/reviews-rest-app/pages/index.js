@@ -150,7 +150,11 @@ export default function Home() {
       const response = await fetch(DELETE_URL, {
         method: "DELETE"
       })
-      const data = await response.json()
+      // handling the "not found case"
+      if (!response.ok) {
+        throw Error("Not found.")
+      }
+
       // after this is complete I want you folks
       // to refresh the frontend
       // Option 1 (similar to refreshin in post)
