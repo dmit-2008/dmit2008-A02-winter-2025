@@ -156,12 +156,15 @@ export default function Home() {
       // Option 1 (similar to refreshin in post)
       // create and filter the reviews to remove
       // the item with that id.
-      let newAllReviews = reviews.filter((review)=> {
-        // keep all ids that isn't the one we're deleting
-        return review.id !== id
-      })
-      setReviews(newAllReviews)
-
+      // let newAllReviews = reviews.filter((review)=> {
+      //   // keep all ids that isn't the one we're deleting
+      //   return review.id !== id
+      // })
+      // setReviews(newAllReviews)
+      // Option 2: Refresh all of the data.
+      await loadReviews()
+      // I want you to think about react query
+      // when using option 2, go explore!
     } catch (error) {
       // you want to display this to the user
       // we'll be talk about this late in the
