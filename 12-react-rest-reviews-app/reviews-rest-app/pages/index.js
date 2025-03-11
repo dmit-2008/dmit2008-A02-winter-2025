@@ -30,6 +30,8 @@ import Typography from '@mui/material/Typography';
 
 import DeleteIcon from '@mui/icons-material/Delete';
 
+import { getReviews } from '../utils/api/reviews';
+
 const MOCK_ADAPTATION_RATING = [{
   'title': 'Fight Club',
   'comment': 'Great movie and book',
@@ -62,9 +64,7 @@ export default function Home() {
     try {
       // making the fetch request to the backend
       // it's on a different domain, so you need to specify the domain.
-      const response = await fetch(`${BASE_URL}/reviews`)
-      const data = await response.json()
-      console.log(data)
+      const data = await getReviews()
       // to update the state of the page
       setReviews(data)
     } catch (error) {
