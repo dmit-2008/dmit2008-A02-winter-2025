@@ -131,7 +131,7 @@ export default function Home() {
 
   // I want you to look up the card documentation
   // to add a delete button on the card itself
-  const removeReview = (id) => {
+  const removeReview = async (id) => {
     console.log("removeReview, id: ", id)
     // implement this remove review
     // refresh the frontend.
@@ -141,7 +141,34 @@ export default function Home() {
     // showing the url to yourself will save you
     // a lot of time
     console.log(DELETE_URL)
+    // we can wrap in a try catch
+    try {
+      // in a try catch you'are attempting
+      // the code below but it might error out.
+      // you use this technique when dealing
+      // with external data that's not guaranteed.
+      const response = await fetch(DELETE_URL, {
+        method: "DELETE"
+      })
+      const data = await response.json()
+      // after this is complete I want you folks
+      // to refresh the frontend
+      // Option 1 (similar to refreshin in post)
+      // create and filter the reviews to remove
+      // the item with that id.
+      let newAllReviews = reviews.filter((review)=> {
+        // keep all ids that isn't the one we're deleting
+        return review.id !== id
+      })
+      setReviews(newAllReviews)
 
+    } catch (error) {
+      // you want to display this to the user
+      // we'll be talk about this late in the
+      // semester when talking about snackbars/
+      // toast messages.
+      console.log(error)
+    }
   }
 
   return (

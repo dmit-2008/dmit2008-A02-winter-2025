@@ -19,22 +19,10 @@
       "id": 3
     },
     {
-      "title": "Gladiator",
-      "comment": "Movie was great, didn't watch the second one.",
-      "rating": 8,
-      "id": 4
-    },
-    {
       "title": "Perfume: Story of a Murderer  ",
       "comment": "psychological thriller film, pretty good?",
       "rating": 10,
       "id": 5
-    },
-    {
-      "title": "Game of thrones",
-      "comment": "skip the last two seasons, george rr martin ain't gonna finish them.",
-      "rating": 7,
-      "id": 6
     },
     {
       "title": "The Sky is everywhere",
