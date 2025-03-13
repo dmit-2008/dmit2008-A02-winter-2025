@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 
-import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -21,6 +19,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import Navbar from '../components/Navbar';
 import NewReviewForm from '../components/NewReviewForm';
+import ReviewCard from '../components/ReviewCard';
 
 import { getReviews,  deleteReview } from '../utils/api/reviews';
 
@@ -134,40 +133,13 @@ export default function Home() {
             </Button>
           </Box>
           {reviews.map((adaptation, index)=> {
-            return <Card
-              sx={{marginTop: 2}}
-              key={index}
-            >
-              <CardHeader
-                avatar={
-                  <Avatar sx={{ bgcolor: 'blue' }} aria-label="recipe">
-                    {adaptation.rating}
-                  </Avatar>
-                }
-                action={
-                  // make a online function that uses the
-                  // adataptation.id to pass in.
-                  <IconButton
-                    onClick={
-                      ()=> {removeReview(adaptation.id)}
-                    }
-                  >
-                    <DeleteIcon />
-                  </IconButton>
-                }
-                title={
-                  <Typography variant="body2" color="text.secondary">
-                    {adaptation.title}
-                  </Typography>
-                }
-
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  {adaptation.comment}
-                </Typography>
-              </CardContent>
-            </Card>
+            return <ReviewCard
+              id={adaptation.id}
+              title={adaptation.title}
+              rating={adaptation.rating}
+              comment={adaptation.comment}
+              loadReviews={loadReviews}
+            />
           })}
 
         </Container>
