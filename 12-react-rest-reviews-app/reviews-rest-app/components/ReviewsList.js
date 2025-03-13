@@ -12,7 +12,6 @@ export default function ReviewsList({
   // if using option 2
   loadReviews,
   // if you're suing option 1
-  reviews,
   setReviews
 }) {
 
@@ -37,6 +36,4 @@ export default function ReviewsList({
       />
     })}
   </>
-
-
 }
