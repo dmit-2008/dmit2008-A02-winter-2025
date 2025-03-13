@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
-
 import Navbar from '../components/Navbar';
 import NewReviewForm from '../components/NewReviewForm';
 import ReviewsList from '../components/ReviewsList';
