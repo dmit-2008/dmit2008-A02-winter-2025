@@ -9,11 +9,17 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 import Container from '@mui/material/Container';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 export default function Home() {
+  // we're going to create some state to handle
+  // the loading and error
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
+
   // I want you to make essentially a stateful or values.
   const [quoteData, setQuoteData] = useState({
     quote: "Default quote",
@@ -37,6 +43,8 @@ export default function Home() {
   // I want you to create a function that is async
   // makes a request to https://stoic.tekloon.net/stoic-quote to get a random quote.
   const loadRandomQuote = async () => {
+    // handle the loading
+    setIsLoading(true)
     const QUOTE_URL = "/api/random_quote"
     try {
       // let's essentially make a request here.
@@ -47,16 +55,38 @@ export default function Home() {
 
       console.log(randomQuoteData)
       setQuoteData(randomQuoteData)
-
+      // the data is fetched so you can set it to false.
+      setIsLoading(false)
+      setError("")
     } catch (error) {
       console.log(error)
       // should be visible to the user whenever you handle an error
+
+
     }
   }
 
   // states of a component when fetching data.
   // 1. when it's loading (when the fetch is happening.)
-
+  if (isLoading) {
+    // return early
+    return <>
+      <AppBar position="relative">
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            We Love Quotes
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Container>
+        <Box sx={{ display: 'flex', width: "100%" }}>
+          <CircularProgress />
+        </Box>
+      </Container>
+    </>
+  }
+  // 2. Error state (might happen, might not)
+  // 3. when the data is loaded.
 
 
   // I want you to set the values in the jsx for this quote.
