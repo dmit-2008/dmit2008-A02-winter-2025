@@ -36,5 +36,9 @@ export default async function handler(req, res) {
   await sleep(2000)
 
   // return a status.
-  res.status(200).json(randomQuote)
+  // res.status(200).json(randomQuote)
+
+  // let's return an error
+  res.status(500).json({error: "Server error"})
+
 }

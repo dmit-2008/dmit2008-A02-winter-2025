@@ -110,7 +110,6 @@ export default function Home() {
     </>
   }
 
-
   // 3. when the data is loaded.
   // I want you to set the values in the jsx for this quote.
   return (
