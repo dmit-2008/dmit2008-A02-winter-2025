@@ -28,9 +28,10 @@ export default function Home() {
     // we're not using the result we are just setting state inside
     // of that function
     loadRandomQuote() // called synchronous but is async.
-
+    console.log("Fired Mounting")
   }, []) // empty dependency array means on mount.
-
+  // note this effect is fired twice, this is part of react 18 and 19.
+  // we can disable strict mode in next.config.js to get it to fire once.
 
 
   // I want you to create a function that is async
@@ -52,6 +53,10 @@ export default function Home() {
       // should be visible to the user whenever you handle an error
     }
   }
+
+  // states of a component when fetching data.
+  // 1. when it's loading (when the fetch is happening.)
+
 
 
   // I want you to set the values in the jsx for this quote.

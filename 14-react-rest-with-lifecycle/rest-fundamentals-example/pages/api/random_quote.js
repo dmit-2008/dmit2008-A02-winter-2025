@@ -1,4 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+// we're adding some sleep to emphasize the loading.
+function sleep(ms) {
+  return new Promise((resolve) =>
+    setTimeout(resolve, ms));
+}
 
 export default function handler(req, res) {
   // all of our quotes here.
