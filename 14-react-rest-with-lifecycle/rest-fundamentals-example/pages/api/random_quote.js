@@ -5,7 +5,7 @@ function sleep(ms) {
     setTimeout(resolve, ms));
 }
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   // all of our quotes here.
   const allQuotes = [
     {
@@ -31,6 +31,9 @@ export default function handler(req, res) {
 
   // access a random quote
   let randomQuote = allQuotes[randomIndex]
+
+  // let's add some sleep so that we can see the loading.
+  await sleep(2000)
 
   // return a status.
   res.status(200).json(randomQuote)
