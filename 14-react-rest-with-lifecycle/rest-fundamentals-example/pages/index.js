@@ -53,6 +53,12 @@ export default function Home() {
       // let's parse the response from json to a js object
       const randomQuoteData = await response.json()
 
+      // if a response is not okay
+      // if it's not in the 200s range
+      if (!response.ok) {
+        throw new Error("Error fetching request")
+      }
+
       console.log(randomQuoteData)
       setQuoteData(randomQuoteData)
       // the data is fetched so you can set it to false.
@@ -61,7 +67,8 @@ export default function Home() {
     } catch (error) {
       console.log(error)
       // should be visible to the user whenever you handle an error
-
+      setError("Error while fetching request")
+      setIsLoading(false)
 
     }
   }
@@ -79,16 +86,32 @@ export default function Home() {
         </Toolbar>
       </AppBar>
       <Container>
-        <Box sx={{ display: 'flex', width: "100%" }}>
+        <Box sx={{ display: 'flex' }}>
           <CircularProgress />
         </Box>
       </Container>
     </>
   }
   // 2. Error state (might happen, might not)
+  if (error !== "") {
+    return <>
+      <AppBar position="relative">
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            We Love Quotes
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Container>
+        <Typography variant="body2" color="danger" noWrap>
+          {error}
+        </Typography>
+      </Container>
+    </>
+  }
+
+
   // 3. when the data is loaded.
-
-
   // I want you to set the values in the jsx for this quote.
   return (
     <div>
