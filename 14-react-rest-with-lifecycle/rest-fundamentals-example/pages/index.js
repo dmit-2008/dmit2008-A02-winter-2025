@@ -1,5 +1,6 @@
-
-import { useState } from "react"
+// I want you to import the useEffect.
+// we're going to import useEffect from react
+import { useState, useEffect } from "react"
 
 import Head from 'next/head'
 
@@ -18,6 +19,19 @@ export default function Home() {
     quote: "Default quote",
     author: "default author"
   }) // there's none
+
+  // I want to fire on mount (listen to the mount)
+  useEffect(()=> {
+    // load the quote in the useEffect.
+    // the callback function in a useEffect can't be asynchronous
+    // but that's okay we just need to call our random quote
+    // we're not using the result we are just setting state inside
+    // of that function
+    loadRandomQuote() // called synchronous but is async.
+
+  }, []) // empty dependency array means on mount.
+
+
 
   // I want you to create a function that is async
   // makes a request to https://stoic.tekloon.net/stoic-quote to get a random quote.
@@ -38,10 +52,6 @@ export default function Home() {
       // should be visible to the user whenever you handle an error
     }
   }
-
-  // I want you to import the useEffect.
-  // I want to fire on mount (listen to the mount)
-  // load the quote in the useEffect.
 
 
   // I want you to set the values in the jsx for this quote.
