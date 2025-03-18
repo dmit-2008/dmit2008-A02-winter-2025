@@ -39,6 +39,11 @@ export default function Home() {
     }
   }
 
+  // I want you to import the useEffect.
+  // I want to fire on mount (listen to the mount)
+  // load the quote in the useEffect.
+
+
   // I want you to set the values in the jsx for this quote.
   return (
     <div>
