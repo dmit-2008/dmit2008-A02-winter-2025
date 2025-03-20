@@ -69,7 +69,6 @@ export default function Home() {
       // should be visible to the user whenever you handle an error
       setError("Error while fetching request")
       setIsLoading(false)
-
     }
   }
 
