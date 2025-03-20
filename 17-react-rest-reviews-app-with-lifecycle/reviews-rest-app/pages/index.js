@@ -6,6 +6,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
+import CircularProgress from '@mui/material/CircularProgress';
+
 import Navbar from '../components/Navbar';
 import NewReviewForm from '../components/NewReviewForm';
 import ReviewsList from '../components/ReviewsList';
@@ -78,23 +80,18 @@ export default function Home() {
           <NewReviewForm
             loadReviews={loadReviews}
           />
-          <Box
-            sx={{
-              pt: 2,
-              pb: 2,
-            }}
-          >
-            <Button
-              variant="contained"
-              onClick={loadReviews}
-            >
-              Load All Current Reviews
-            </Button>
-          </Box>
-          <ReviewsList
-            reviews={reviews}
-            loadReviews={loadReviews}
-          />
+          {/*
+            check if it's loading, show circular progress if it is
+            otherwise show the reviews list if not.
+          */
+          isLoading ?
+            <CircularProgress />
+            :
+            <ReviewsList
+              reviews={reviews}
+              loadReviews={loadReviews}
+            />
+          }
 
         </Container>
       </main>
