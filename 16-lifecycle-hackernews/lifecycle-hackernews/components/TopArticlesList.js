@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 
 import Button from "@mui/material/Button"
 
+// Import my new component
+import Story from './Story'
 
 export default function TopArticlesList() {
   // create a slice size
@@ -49,12 +51,10 @@ export default function TopArticlesList() {
   return <>
       { // using knowledge of slice to get a subarray
         allStoryIds.slice(0, slice*SLICE_SIZE).map((storyId)=> {
-          // just render them so that I can see what's going on.
-          return <p key={storyId}>
-            {storyId}
-
-          </p>
-
+          return <Story
+            key={storyId}
+            id={storyId}
+          />
         })
         // on the button below we want increase the slice by one
       }
