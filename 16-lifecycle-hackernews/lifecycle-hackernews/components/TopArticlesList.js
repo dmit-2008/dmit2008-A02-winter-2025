@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+import Button from "@mui/material/Button"
+
+
 export default function TopArticlesList() {
   // create a slice size
   const SLICE_SIZE = 5
@@ -12,6 +15,7 @@ export default function TopArticlesList() {
 
   // an effect
     // load all of the stories
+    // I want you to do this.
 
   // jsx
     // a list of story components (we'll do that later)
@@ -20,6 +24,6 @@ export default function TopArticlesList() {
   return <>
 
 
-
+      <Button variant="contained">Load {SLICE_SIZE} more stories</Button>
   </>
 }
