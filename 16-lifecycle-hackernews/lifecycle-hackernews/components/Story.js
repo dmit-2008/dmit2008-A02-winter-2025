@@ -9,15 +9,29 @@ export default function Story({id}) {
   // make a request to the url using the id
   const loadStory = async () => {
     // it's already loading so we dont' have to worry about that.
-    c
-
-
+    const STORY_URL = `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+    const response = await fetch(STORY_URL)
+    const data = await response.json()
+    setStory(data)
+    // if it's fetched successfully then it's not loading any more
+    setIsLoading(false)
   }
 
   // use an effect that will load when the prop id has changed
+  useEffect(()=> {
+    // remember can't be async
+    loadStory()
+  }, [id]) // we're going to make it so that we listen to changes in the id.
+
+  // let's see the changes in story data
+  useEffect(()=> {
+    console.log(`loaded ${id}`)
+    console.log(story)
+  }, [story])
+
+
 
   // going handle all states and display the story data.
-
   // let's handle the loading state here.
   if (isLoading) {
     // this you can change to whatever you want for loading.
