@@ -35,14 +35,34 @@ export default function TopArticlesList() {
     console.log(allStoryIds)
   }, [allStoryIds])
 
+  // button handler to increase the slice size
+  const increaseSliceSize = () => {
+    // we're going to add one.
+    setSlice(slice + 1)
+  }
+
 
   // jsx
     // a list of story components (we'll do that later)
     // an MUI button that will be hooked to a method which
     // will increase the slice by one.
   return <>
+      { // using knowledge of slice to get a subarray
+        allStoryIds.slice(0, slice*SLICE_SIZE).map((storyId)=> {
+          // just render them so that I can see what's going on.
+          return <p key={storyId}>
+            {storyId}
 
+          </p>
 
-      <Button variant="contained">Load {SLICE_SIZE} more stories</Button>
+        })
+        // on the button below we want increase the slice by one
+      }
+      <Button
+        variant="contained"
+        onClick={increaseSliceSize}
+      >
+        Load {SLICE_SIZE} more stories
+      </Button>
   </>
 }
