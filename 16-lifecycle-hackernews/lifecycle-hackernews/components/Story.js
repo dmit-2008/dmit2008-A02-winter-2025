@@ -24,12 +24,11 @@ export default function Story({id}) {
   }, [id]) // we're going to make it so that we listen to changes in the id.
 
   // let's see the changes in story data
+  // purely debugging.
   useEffect(()=> {
     console.log(`loaded ${id}`)
     console.log(story)
   }, [story])
-
-
 
   // going handle all states and display the story data.
   // let's handle the loading state here.
@@ -40,9 +39,11 @@ export default function Story({id}) {
     </p>
   }
 
-
+  // let's update this so that I get the title and the by
+  // if it gets to this point the data will be loaded successfully
+  // we're going to build out this card next class.
   return <p>
-    {id}
+    {story.title} by {story.by}
   </p>
 
 }

@@ -28,7 +28,7 @@
       "version": 80,
       "versionNonce": 1706975349,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312354476,
       "link": null,
       "locked": false
@@ -56,7 +56,7 @@
       "version": 111,
       "versionNonce": 1605355637,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312121181,
       "link": null,
       "locked": false,
@@ -95,7 +95,7 @@
       "version": 129,
       "versionNonce": 131656795,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312361755,
       "link": null,
       "locked": false
@@ -123,7 +123,7 @@
       "version": 19,
       "versionNonce": 1203443861,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312142700,
       "link": null,
       "locked": false,
@@ -160,7 +160,7 @@
       "version": 24,
       "versionNonce": 1160467451,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312147106,
       "link": null,
       "locked": false,
@@ -260,10 +260,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        -246.66666666666657,
-        -7.7777777777778
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "Br9eoIZtInoXJcgghwyIc",
@@ -288,7 +285,7 @@
       "version": 24,
       "versionNonce": 481113877,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312148066,
       "link": null,
       "locked": false,
@@ -388,10 +385,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        -2.2222222222222285,
-        23.333333333333314
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "ebzo9j8a5Fwi1XM-WB5VT",
@@ -416,7 +410,7 @@
       "version": 71,
       "versionNonce": 636012725,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312165353,
       "link": null,
       "locked": false,
@@ -455,7 +449,7 @@
       "version": 90,
       "versionNonce": 2108635221,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312175206,
       "link": null,
       "locked": false
@@ -603,7 +597,7 @@
       "version": 39,
       "versionNonce": 1009617109,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312205146,
       "link": null,
       "locked": false,
@@ -640,7 +634,7 @@
       "version": 37,
       "versionNonce": 1073359957,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312208795,
       "link": null,
       "locked": false,
@@ -792,10 +786,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        -260,
-        24.444444444444457
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "b2bCQV-QqECOKKiCXC9Pu",
@@ -820,7 +811,7 @@
       "version": 24,
       "versionNonce": 1554552731,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312209372,
       "link": null,
       "locked": false,
@@ -920,16 +911,13 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        2.2222222222221717,
-        40
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "QvuIYnz65NDiNbB_jEzMH",
       "type": "text",
-      "x": 212.8888888888889,
-      "y": 258.33333333333337,
+      "x": 234.8888888888889,
+      "y": 261.33333333333337,
       "width": 183.0798797607422,
       "height": 75,
       "angle": 0,
@@ -945,11 +933,11 @@
       "index": "aG",
       "roundness": null,
       "seed": 972507381,
-      "version": 73,
-      "versionNonce": 1009935029,
+      "version": 88,
+      "versionNonce": 1544294210,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1742312278273,
+      "boundElements": [],
+      "updated": 1742484238107,
       "link": null,
       "locked": false,
       "text": "This is going to\nfetch on update\nof a prop called id.",
@@ -987,7 +975,7 @@
       "version": 49,
       "versionNonce": 730004117,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312367608,
       "link": null,
       "locked": false
@@ -1015,7 +1003,7 @@
       "version": 21,
       "versionNonce": 1525553717,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742312376390,
       "link": null,
       "locked": false,

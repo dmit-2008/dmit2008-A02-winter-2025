@@ -30,7 +30,7 @@ export default function TopArticlesList() {
     // it's async but we're calling synchronously because of the
     // restrictions of the useEffect not able to handle async functions.
     loadTopStories()
-  }, [])
+  }, []) // on mount
 
   // let's take a look at allStoryIds
   useEffect(()=> {
