@@ -39,6 +39,12 @@ export default function Home() {
     }
   }
 
+  // I want you to import useeffect
+  // create an effect that fires on mount
+  // that will load the reviews
+  // also handle the loading state.
+
+
   return (
     <div>
       <Head>
