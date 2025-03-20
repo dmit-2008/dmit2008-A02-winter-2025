@@ -1,4 +1,5 @@
-import { useState } from 'react'
+// import the effect.
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 
 import Box from '@mui/material/Box';
@@ -14,6 +15,7 @@ import { getReviews } from '../utils/api/reviews';
 export default function Home() {
   // I want you to create the stateful values we discussed
   // make the reviews stateful
+  const [isLoading, setIsLoading] = useState(false)
   const [reviews, setReviews] = useState([])
 
   // I want you to make all of these inputs controlled.
@@ -26,16 +28,21 @@ export default function Home() {
   const loadReviews = async () => {
     // you can use try catch when you are trying to access
     // something outside of the application this would files/rest apis/network call.
+    setIsLoading(true)
     try {
       // making the fetch request to the backend
       // it's on a different domain, so you need to specify the domain.
       const data = await getReviews()
       // to update the state of the page
       setReviews(data)
+      setIsLoading(false)
     } catch (error) {
       // we're going to show later on a strategy of how to
       // display this error as a toast message.
       console.log(error)
+      setIsLoading(false)
+      // we're not handling the error state unless you folks really want to
+      // please take a look at 16-hackernews example if you want to see an example of this.
     }
   }
 
@@ -43,6 +50,19 @@ export default function Home() {
   // create an effect that fires on mount
   // that will load the reviews
   // also handle the loading state.
+  // create some circular progress to handle loading.
+  useEffect(()=> {
+    // call our function on mount.
+    loadReviews()
+  }, []) // launch this on mount.
+
+  // if you're lazy and you don't want to look at the component profiler
+  // you can always see the changes of a stateful using useEffect by listening
+  // to the changes and printing it out to the console.
+  useEffect(()=> {
+    console.log(reviews)
+  }, [reviews])
+
 
 
   return (
