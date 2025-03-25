@@ -1,5 +1,10 @@
 # React Component Library - Bootstrap
 
+# Saas paas Iaas
+
+[take a look here](saas_paas_iaas.excalidraw)
+
+
 # Why?
 
 You need to deploy your applications ("to production") to make them reachable for everyone and have a usable product/site. We're going to use Vercel for our deployment. They created and currently maintain Next.js and they have a pretty good pricing model.
