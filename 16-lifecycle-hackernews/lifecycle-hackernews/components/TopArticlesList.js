@@ -7,7 +7,7 @@ import Story from './Story'
 
 export default function TopArticlesList() {
   // create a slice size
-  const SLICE_SIZE = 5
+  const SLICE_SIZE = 10
   // create some state
     // allStoriesList
   const [allStoryIds, setAllStoryIds] = useState([])

@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react"
 
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
+
 export default function Story({id}) {
   // handle the loading state (set the default to true.)
   const [isLoading, setIsLoading] = useState(true)
@@ -42,8 +49,27 @@ export default function Story({id}) {
   // let's update this so that I get the title and the by
   // if it gets to this point the data will be loaded successfully
   // we're going to build out this card next class.
-  return <p>
-    {story.title} by {story.by}
-  </p>
-
+  return <Card sx={{mt: 2}}>
+    <CardContent>
+      <Link
+        variant="h5"
+        href={story.url}
+        underline="none"
+        target="_blank"
+      >
+        {story.title}
+      </Link>
+      <Typography variant="body2">
+        score: {story.score} by: {story.by}
+      </Typography>
+    </CardContent>
+    {/* is we could build out the comment
+    component very similarly to this one
+    by using the id of the story.kids */}
+    <CardActions>
+      <Button variant="contained">
+        Load Comments
+      </Button>
+    </CardActions>
+  </Card>
 }
