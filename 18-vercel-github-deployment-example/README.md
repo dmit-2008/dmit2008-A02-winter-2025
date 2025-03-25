@@ -1,5 +1,12 @@
 # React Component Library - Bootstrap
 
+# our example repo
+https://github.com/dgmouris/dmit2008-a02-winter-2025-deployment-example
+
+our production website:
+https://dmit2008-a02-winter-2025-deployment-example.vercel.app/
+
+
 # Deployment workflow
 
 [take a look here](deployment-workflow.excalidraw)
