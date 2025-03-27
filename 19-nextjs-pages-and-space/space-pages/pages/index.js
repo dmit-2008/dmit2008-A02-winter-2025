@@ -1,3 +1,7 @@
+// we're going import useEffect and useState
+// so that we can fetch things.
+import {useEffect, useState} from 'react'
+
 import Head from 'next/head'
 
 import Typography from '@mui/material/Typography';
@@ -7,8 +11,35 @@ import Box from '@mui/material/Box';
 import AgencyCard from '@components/AgencyCard';
 import NavBar from '@components/NavBar';
 
+// import my get agencies
+import { getAgencies } from '@utils/api/agencies';
 
 export default function Home() {
+  // create our stateful values to fetch
+  const [agencies, setAgencies] = useState() // undefined for now
+  // I'm going to set the default of loading to true
+  // because we're going to fetch on mount.
+  const [isLoading, setIsLoading] = useState(true)
+
+  // we're going create our loading of the agencies
+  const loadAgencies = async () => {
+    // fetch the data
+    const data = await getAgencies()
+    console.log(data)
+    // set the agencies and loading to false.
+    setAgencies(data)
+    setIsLoading(false)
+  }
+
+  // use an effect on mount
+  useEffect(()=> {
+    loadAgencies()
+  }, []) // on mount
+
+  // let's handle the loading state
+  if (isLoading) {
+    return <>Loading...</>
+  }
 
   return (
     <div>
