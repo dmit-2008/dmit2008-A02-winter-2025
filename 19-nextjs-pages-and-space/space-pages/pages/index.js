@@ -68,8 +68,15 @@ export default function Home() {
             {/* We're going to loop through the data */
             agencies.results.map((agency)=> {
               return <AgencyCard
+                key={agency.id}
                 // the ? image just checks if there is an image.
                 imageUrl={agency.image?.image_url}
+                name={agency.name}
+                abbreviation={agency.abbrev}
+                description={agency.description}
+                // we're also going to pass down the id to
+                // our component so that it can use it to navigate
+                id={agency.id}
               />
             })
             }
