@@ -22,6 +22,17 @@ export default function User() {
   // let's take a look at the contents
   console.log(router)
 
+  // router.query holds all of the path
+  // and query parameters for next.js on
+  // the frontend we're going to destructure
+  // and use the "userId" see above why
+  // it's userId (or the filename in brackets)
+  const { userId } = router.query
+  // if you had a path to page that looked like this
+  // http://localhost:3000/user/zoe?new_user=true&favourite_lang=javascript
+  // you'll see that "new_user" and "favourite_lang" is also a part of the
+  // the query object.
+
 
   return (
     <div>
@@ -36,11 +47,19 @@ export default function User() {
         <Container sx={{paddingTop:2}} component="main" maxWidth="xs">
 
           <Typography variant="h3">
-            User
+            {/* we can use the above directly in our code. */}
+            Welcome user {userId}
           </Typography>
           <Typography variant="p">
             This is a dynamic page.
           </Typography>
+          <ul>
+
+          {/* see all query params */
+          Object.keys(router.query).map((param, index)=> {
+            return <li key={index}>{param}, value: {router.query[param]}</li>
+          })}
+          </ul>
         </Container>
 
     </div>
