@@ -2,11 +2,16 @@ import Head from 'next/head'
 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
 
 import NavBar from '@components/NavBar';
 
-export default function AboutUs() {
+/*
+This is a "dynamic" path where you can use
+the variable "userId" inside of your application.
+
+
+*/
+export default function User() {
 
   return (
     <div>
@@ -21,11 +26,10 @@ export default function AboutUs() {
         <Container sx={{paddingTop:2}} component="main" maxWidth="xs">
 
           <Typography variant="h3">
-            About us
+            User
           </Typography>
           <Typography variant="p">
-            We really like space so we created an application that's about space
-            agencies and their spacecrafts.
+            This is a dynamic page.
           </Typography>
         </Container>
 

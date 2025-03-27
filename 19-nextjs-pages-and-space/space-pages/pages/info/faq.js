@@ -6,7 +6,14 @@ import Box from '@mui/material/Box';
 
 import NavBar from '@components/NavBar';
 
-export default function AboutUs() {
+/*
+Since the file path within pages is
+/info/faq.js
+The path on our local machine is going to be
+http://localhost:3000/info/faq
+This goes for any other type of static file mapping.
+*/
+export default function FAQ() {
 
   return (
     <div>
@@ -21,11 +28,10 @@ export default function AboutUs() {
         <Container sx={{paddingTop:2}} component="main" maxWidth="xs">
 
           <Typography variant="h3">
-            About us
+            Questions we hope you ask.
           </Typography>
           <Typography variant="p">
-            We really like space so we created an application that's about space
-            agencies and their spacecrafts.
+            No one really reads FAQs.
           </Typography>
         </Container>
 
