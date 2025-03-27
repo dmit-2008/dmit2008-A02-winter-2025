@@ -1,3 +1,5 @@
+import {useRouter} from 'next/router'
+
 import Head from 'next/head'
 
 import Typography from '@mui/material/Typography';
@@ -8,10 +10,18 @@ import NavBar from '@components/NavBar';
 /*
 This is a "dynamic" path where you can use
 the variable "userId" inside of your application.
-
+The reason for this is because the file path (in pages)
+is `user/[userId].js`
+We can access this on the website with
+http://localhost:3000/user/whateveryouwant
 
 */
 export default function User() {
+  // initialize the router
+  const router = useRouter()
+  // let's take a look at the contents
+  console.log(router)
+
 
   return (
     <div>
