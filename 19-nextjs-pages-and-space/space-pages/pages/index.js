@@ -40,6 +40,7 @@ export default function Home() {
   if (isLoading) {
     return <>Loading...</>
   }
+  // agencies will be populated
 
   return (
     <div>
@@ -64,6 +65,15 @@ export default function Home() {
               alignItems: 'center',
             }}
           >
+            {/* We're going to loop through the data */
+            agencies.results.map((agency)=> {
+              return <AgencyCard
+                // the ? image just checks if there is an image.
+                imageUrl={agency.image?.image_url}
+              />
+            })
+            }
+
           </Box>
         </Container>
 
