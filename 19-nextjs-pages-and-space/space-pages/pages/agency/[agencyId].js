@@ -109,7 +109,8 @@ export default function Agency() {
           {agency.spacecraft_list.map((spacecraft)=> {
             return <SimpleDetailsCard
               key={spacecraft.id} // this is for lists in jsx.
-              description={spacecraft.name}
+              title="spacecraft name"
+              description={spacecraft.name} // from the agency data
               buttonCallback={()=> {
                 // this will navigate to the new spacecraft page.
                 router.push(`/spacecraft/${spacecraft.id}`)
