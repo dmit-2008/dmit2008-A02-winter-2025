@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
 import NavBar from '@components/NavBar';
+import SimpleDetailsCard from '@components/SimpleDetailsCard';
 
 // import our api functions
 import { getAgency } from '@utils/api/agencies';
@@ -47,6 +48,7 @@ export default function Agency() {
     setIsLoading(false)
     setAgency(data)
   }
+
   useEffect(()=> {
     // we're going to use the line below to see that the agencyId
     // begins as "undefined" when the router isn't ready
@@ -68,16 +70,12 @@ export default function Agency() {
 
   }, [agencyId]) // we're listening to changes in the agencyId
 
-
-
-
   // handle our loading state
   if (isLoading) {
     return `Loading agency ${agencyId}`
   }
-  // you can see the data of agency
-  console.log(agency)
 
+  // you can see the data of agency
   return (
     <div>
       <Head>
@@ -95,10 +93,28 @@ export default function Agency() {
             {agency.name} ({agency.abbrev})
           </Typography>
           <Typography variant="p">
-            This is a dynamic page.
+            {agency.description}
           </Typography>
-          <ul>
+          {/*
+            I want you to import the simpledetail card
+            you'll use this when looping through the
+            agency.spacecraft_list
+            I want you to pass the name of the pass craft
+            as the "description" prop
+            I want you to pass a callback funtion using
+            router.push to the path /spacecraft/idyoullusehere
+            as the buttonCallback prop
+            I want you to passin "go to spacecraft" as the buttonName prop
+          */}
+          {agency.spacecraft_list.map((spacecraft)=> {
+            return <SimpleDetailsCard
+              key={spacecraft.id} // this is for lists in jsx.
+              description={spacecraft.name}
+            />
+          })}
 
+
+          <ul>
           {/* see all query params */
           Object.keys(router.query).map((param, index)=> {
             return <li key={index}>{param}, value: {router.query[param]}</li>
