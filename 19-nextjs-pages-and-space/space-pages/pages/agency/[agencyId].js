@@ -95,7 +95,7 @@ export default function Agency() {
           <Typography variant="p">
             {agency.description}
           </Typography>
-          {/*
+          {/* Challenge:
             I want you to import the simpledetail card
             you'll use this when looping through the
             agency.spacecraft_list
@@ -105,6 +105,8 @@ export default function Agency() {
             router.push to the path /spacecraft/idyoullusehere
             as the buttonCallback prop
             I want you to passin "go to spacecraft" as the buttonName prop
+
+            create the spacecraft page display the id.
           */}
           {agency.spacecraft_list.map((spacecraft)=> {
             return <SimpleDetailsCard
