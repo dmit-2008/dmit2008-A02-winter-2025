@@ -110,6 +110,11 @@ export default function Agency() {
             return <SimpleDetailsCard
               key={spacecraft.id} // this is for lists in jsx.
               description={spacecraft.name}
+              buttonCallback={()=> {
+                // this will navigate to the new spacecraft page.
+                router.push(`/spacecraft/${spacecraft.id}`)
+              }}
+              buttonName={"Go to spacecraft"}
             />
           })}
 
