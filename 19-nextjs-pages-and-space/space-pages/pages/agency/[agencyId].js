@@ -19,6 +19,16 @@ export default function Agency() {
   // get the agencyId (again look at the file name)
   const { agencyId } = router.query
 
+  // Challenge:
+  // import getAgency from the api folder
+  // you're going to create the state to load the data
+  // you're going t handle the loading states
+  // create a function to get the agency data using
+  // the agencyId specified above.
+  // you'll trigger this in a useEffect that is listening
+  // to agencyId and you'll only run the "load" function
+  // if agencyId is defined or router.isReady is true.
+
   return (
     <div>
       <Head>
