@@ -47,8 +47,26 @@ export default function Agency() {
     setIsLoading(false)
     setAgency(data)
   }
+  useEffect(()=> {
+    // we're going to use the line below to see that the agencyId
+    // begins as "undefined" when the router isn't ready
+    // and then it becomes defined.
+    console.log(`trigged agencyId change current value: ${agencyId}`)
+    // we're going to handle this in one of two ways
+    // option 1: create a guard if the agencyId doesn't exist
+    if (!agencyId) {
+      return // nothing below will execute if the agencyId is not defined.
+    }
+    // option 2: create a guard that will listen to router.isReady
+    // if (!router.isReady) {
+    //   return
+    // }
 
 
+    // we're going load the agency data
+    loadAgency()
+
+  }, [agencyId]) // we're listening to changes in the agencyId
 
 
 
@@ -57,6 +75,8 @@ export default function Agency() {
   if (isLoading) {
     return `Loading agency ${agencyId}`
   }
+  // you can see the data of agency
+  console.log(agency)
 
   return (
     <div>
@@ -72,7 +92,7 @@ export default function Agency() {
 
           <Typography variant="h3">
             {/* Display the agency */}
-            Agency: { agencyId }
+            {agency.name} ({agency.abbrev})
           </Typography>
           <Typography variant="p">
             This is a dynamic page.
