@@ -40,6 +40,24 @@ export default function Agency() {
   // to agencyId and you'll only run the "load" function
   // if agencyId is defined or router.isReady is true.
 
+  const loadAgency = async () => {
+    // get the data from the backend
+    const data = await getAgency(agencyId)
+    // handle the state
+    setIsLoading(false)
+    setAgency(data)
+  }
+
+
+
+
+
+
+  // handle our loading state
+  if (isLoading) {
+    return `Loading agency ${agencyId}`
+  }
+
   return (
     <div>
       <Head>
