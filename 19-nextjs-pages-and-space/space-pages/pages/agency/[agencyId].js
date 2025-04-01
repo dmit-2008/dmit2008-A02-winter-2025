@@ -1,3 +1,6 @@
+// import the effect and state hooks from react
+import { useEffect, useState } from 'react';
+
 import {useRouter} from 'next/router'
 
 import Head from 'next/head'
@@ -7,6 +10,9 @@ import Container from '@mui/material/Container';
 
 import NavBar from '@components/NavBar';
 
+// import our api functions
+import { getAgency } from '@utils/api/agencies';
+
 /*
 This file is going to be using the url path /agency/whateveridnumber
 beacuse our file path in pages is /agency/[agencyId].js
@@ -14,6 +20,11 @@ What we'll do is we'll use the router to use the agencyId from
 router.query to display it.
 */
 export default function Agency() {
+  // we need to create our state
+  const [isLoading, setIsLoading] = useState(true)
+  // initialize our agency to empty
+  const [agency, setAgency] = useState()
+
   const router = useRouter()
 
   // get the agencyId (again look at the file name)
