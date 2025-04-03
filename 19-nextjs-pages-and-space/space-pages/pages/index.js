@@ -64,7 +64,11 @@ export default function Home() {
     {shallow: true} // this will not force a page refresh
     )
   }
-
+  // Notes on search:
+  // 1. normally this is where you're going to use a technique called debouncing
+  // which instead of firing every key stroke it'll fire every few ms.
+  // 2. rule of thumb most search engines start to search after three characters
+  // are entered.
 
 
   // use an effect on mount
