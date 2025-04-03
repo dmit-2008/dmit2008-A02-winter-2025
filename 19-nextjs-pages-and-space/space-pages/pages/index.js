@@ -35,17 +35,49 @@ export default function Home() {
   // we're going create our loading of the agencies
   const loadAgencies = async () => {
     // fetch the data
-    const data = await getAgencies()
+    // we're going to pass in the search query
+    const data = await getAgencies({search: searchQuery})
     // console.log(data)
     // set the agencies and loading to false.
     setAgencies(data)
     setIsLoading(false)
   }
 
+  // we're going to create an update of the text field
+  // which will do two things first is update the state like we have in the past
+  // but the second is update the query params of the url without refreshing the page
+  const updateSearchQuery = (event) => {
+    // update the state
+    setSearchQuery(event.target.value)
+    // I want to update the search query params
+    // we're going to do this with router.replace
+    // which is like push except it doesn't add to the
+    // history stack
+    router.replace({
+      pathname: router.pathname, // the same path to the url
+      query: {
+        ...router.query, // spread existing queryparameters if i have them
+        q: event.target.value
+      }
+    },
+    undefined, // we're not updating the page so we're replacing the url.
+    {shallow: true} // this will not force a page refresh
+    )
+  }
+
+
+
   // use an effect on mount
   useEffect(()=> {
+    // guard against router not being ready
+    if (!router.isReady) {
+      return
+    }
     loadAgencies()
-  }, []) // on mount
+  }, [searchQuery, router.isReady])
+  // we're going to change so that it listens to the search query and the router
+  // is ready changes
+
 
   // we're going to do something different.
   // we're going to make an effect that will trigger once the router is ready.
@@ -99,6 +131,7 @@ export default function Home() {
               label='search agency'
               fullWidth
               value={searchQuery}
+              onChange={updateSearchQuery}
             />
 
             {/* We're going to loop through the data */
