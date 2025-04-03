@@ -78,8 +78,7 @@ export default function Home() {
                 // our component so that it can use it to navigate
                 id={agency.id}
               />
-            })
-            }
+            })}
 
           </Box>
         </Container>

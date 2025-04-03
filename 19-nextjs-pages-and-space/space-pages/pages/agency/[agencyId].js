@@ -53,7 +53,8 @@ export default function Agency() {
     // we're going to use the line below to see that the agencyId
     // begins as "undefined" when the router isn't ready
     // and then it becomes defined.
-    console.log(`trigged agencyId change current value: ${agencyId}`)
+    // console.log(`trigged agencyId change current value: ${agencyId}`)
+    // console.log(router)
     // we're going to handle this in one of two ways
     // option 1: create a guard if the agencyId doesn't exist
     if (!agencyId) {
@@ -66,6 +67,7 @@ export default function Agency() {
 
 
     // we're going load the agency data
+    // when the agencyId is defined.
     loadAgency()
 
   }, [agencyId]) // we're listening to changes in the agencyId
@@ -76,6 +78,8 @@ export default function Agency() {
   }
 
   // you can see the data of agency
+  console.log(agency)
+
   return (
     <div>
       <Head>
