@@ -37,4 +37,30 @@ test("title is rendered successfully", ()=> {
   // we're going render the component so that we can
   // access it with screen afterwards
   render(<TodoList />)
+
+  // with screen what we're going to is we're going to fetch the
+  // title element by text. We're going to do this with "screen queries"
+  // reference: https://testing-library.com/docs/queries/about/#screen
+  const titleElement = screen.getByText("Our Todo List")
+
+  // with jest-dom from testing library we're going to make our
+  // tests fail first and then we're going to make them pass.
+  // there's a whole bunch of matchers that are going to add here
+  // to enable use to use the dom
+  // reference https://github.com/testing-library/jest-dom#readme
+  // the line below will
+  // expect(titleElement).not.toBeInTheDocument()
+  // the above failed let's make the test pass
+  expect(titleElement).toBeInTheDocument()
+})
+
+test("todo item is added to the list successfully", ()=> {
+  // the process of this test:
+  // render the component
+  // get the input button and list elements via screen using different queries
+  // "simulate" typing into the input
+  // check that the input has the test
+  // "simulate" clicking the button
+  // check to see that the input is empty
+  // check to see if the list has the string
 })
