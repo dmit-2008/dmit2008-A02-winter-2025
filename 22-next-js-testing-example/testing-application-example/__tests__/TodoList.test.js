@@ -43,7 +43,8 @@ test("title is rendered successfully", ()=> {
   // reference: https://testing-library.com/docs/queries/about/#screen
   const titleElement = screen.getByText("Our Todo List")
 
-  console.log(titleElement)
+  // can i debug to the console yes!
+  // console.log(titleElement)
   // with jest-dom from testing library we're going to make our
   // tests fail first and then we're going to make them pass.
   // there's a whole bunch of matchers that are going to add here

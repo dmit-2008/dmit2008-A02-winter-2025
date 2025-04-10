@@ -32,8 +32,10 @@ export default function TodoList () {
 
   return  <Box sx={{ flexGrow: 1 }}>
     <Grid container spacing={2}>
-      
+
       <Grid item xs={12}>
+        {/* Selecting this in the test
+        running this test. */}
         <Typography variant="h2" component="h2">
           Our Todo List
         </Typography>
