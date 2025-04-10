@@ -34,5 +34,7 @@ test("test 2-1 is equal to 1", () => {
 // to get the hang of our testing we're going to check to see if the
 // title exists (not a perfect, but will help us learn some fundamentals)
 test("title is rendered successfully", ()=> {
-
+  // we're going render the component so that we can
+  // access it with screen afterwards
+  render(<TodoList />)
 })
