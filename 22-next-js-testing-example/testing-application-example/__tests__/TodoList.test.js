@@ -72,12 +72,39 @@ test("todo item is added to the list successfully", ()=> {
   const button = screen.getByText("add todo", {exact: false})
   const inputElement = screen.getByLabelText("New Todo")
   const listElement = screen.getByTestId('todo-item-list')
+  // this what we'll type.
+  const EXPECTED_VALUE = "You're almost done!"
+  // above i'm putting this in a constant because we'll use it
+  // a few times in the test.
   // "simulate" typing into the input
-  // we're going to this with fire event
+  // we're going to this with fire event (the change event)
   // reference: https://testing-library.com/docs/dom-testing-library/api-events/#fireevent
+  fireEvent.change(
+    inputElement, // the element to fire the event on
+    {
+      target: {
+        value: EXPECTED_VALUE
+      }
+    }
+  )
+  // check that the input has the test value
+  // make our tests fail first
+  // expect(inputElement.value).not.toBe(EXPECTED_VALUE)
+  // make our tests pass
+  expect(inputElement.value).toBe(EXPECTED_VALUE)
 
-  // check that the input has the test
+
   // "simulate" clicking the button
+  // act is for a more complex state change
+  act(()=> {
+    button.click()
+  })
+  // to make my test fail i'm just going to check
+  // that the input didn't change, below fails.
+  // expect(inputElement.value).toBe(EXPECTED_VALUE)
+  // make the tests pass
   // check to see that the input is empty
+  expect(inputElement.value).toBe("")
   // check to see if the list has the string
+  expect(listElement).toHaveTextContent(EXPECTED_VALUE)
 })

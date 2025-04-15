@@ -46,6 +46,7 @@ export default function TodoList () {
           label="New Todo"
           variant="standard"
           sx={{width: '100%'}}
+          // this is firing the change event
           onChange={onTodoTextChange}
           value={todoText}
         />
@@ -60,6 +61,8 @@ export default function TodoList () {
 
 
       <List
+        // this data-testid which does nothing in your
+        // application.
         data-testid='todo-item-list'
         sx={{width: `100%`}}>
         {allTodos.map((todoItem, index)=> {
