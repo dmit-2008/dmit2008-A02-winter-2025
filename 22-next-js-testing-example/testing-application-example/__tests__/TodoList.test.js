@@ -1,7 +1,12 @@
 // we're going to use a few libraries to make sure our testing works
 // with react and next.js
 // refer to here https://testing-library.com/docs/react-testing-library/example-intro for docs.
-import {render, screen} from '@testing-library/react'
+
+
+// if you're oging to do a simple state change (one) use
+// fireEvent
+// if you're going to do a more complex state change use act
+import {render, act, fireEvent, screen} from '@testing-library/react'
 // "render" is going to be used so that we can use our component inside
 // of our testing environment
 // "screen" is going to be used so that we can access dom items in different
@@ -64,8 +69,13 @@ test("todo item is added to the list successfully", ()=> {
   render(<TodoList />)
   // get the input button and list elements via screen using different queries
   // https://testing-library.com/docs/queries/about/#screen
-
+  const button = screen.getByText("add todo", {exact: false})
+  const inputElement = screen.getByLabelText("New Todo")
+  const listElement = screen.getByTestId('todo-item-list')
   // "simulate" typing into the input
+  // we're going to this with fire event
+  // reference: https://testing-library.com/docs/dom-testing-library/api-events/#fireevent
+
   // check that the input has the test
   // "simulate" clicking the button
   // check to see that the input is empty
