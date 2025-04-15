@@ -36,7 +36,9 @@ test("test 2-1 is equal to 1", () => {
 test("title is rendered successfully", ()=> {
   // we're going render the component so that we can
   // access it with screen afterwards
-  render(<TodoList />)
+  const { container } = render(<TodoList />)
+  // you could use the querySelector on the container
+
 
   // with screen what we're going to is we're going to fetch the
   // title element by text. We're going to do this with "screen queries"
@@ -59,7 +61,10 @@ test("title is rendered successfully", ()=> {
 test("todo item is added to the list successfully", ()=> {
   // the process of this test:
   // render the component
+  render(<TodoList />)
   // get the input button and list elements via screen using different queries
+  // https://testing-library.com/docs/queries/about/#screen
+
   // "simulate" typing into the input
   // check that the input has the test
   // "simulate" clicking the button
