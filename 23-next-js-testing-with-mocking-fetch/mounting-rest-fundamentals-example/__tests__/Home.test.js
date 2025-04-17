@@ -77,6 +77,7 @@ afterAll(()=> {
 
 // we're going to perform two tests
 // 1. check that quote loads on mount
+// note "it" and "test" do the same thing.
 it("should load a quote when page is loaded.", async ()=> {
   // we're doing a complex state change on mount
   await act(()=> {
@@ -95,4 +96,53 @@ it("should load a quote when page is loaded.", async ()=> {
   expect(quoteElement).toHaveTextContent(QUOTE)
   expect(authorElement).toHaveTextContent(AUTHOR)
 })
+
+
 // 2. we're going to check a new quote is loaded when button is clicked.
+it("should load a new quote on button click", async ()=> {
+  // the process of this test
+  // 1. render the component
+  await act(()=> {
+    render(<Home />)
+  })
+  // 2. swap the response of the server to something new
+  const NEW_QUOTE = "Family."
+  const NEW_AUTHOR = "Vin Diesel"
+  // we're going to use https://mswjs.io/docs/api/setup-server/use/
+  // to implement this, what this is going to do is essentially make this
+  // the api call on the same path with a different response
+  server.use(
+
+    http.get(
+      `${BASE_URL}/api/random_quote`, // this is the path to mock
+      () => { // this will be the mock response.
+        return HttpResponse.json({
+          // the only thing different is we're going to
+          // return a new quote and a new author
+          quote: NEW_QUOTE,
+          author: NEW_AUTHOR
+        })
+      }
+    )
+  )
+
+  // 3. get the button element
+  let button = screen.getByTestId("new-quote-button")
+  // 4. click the button
+  await act(()=> {
+    button.click()
+  })
+  // 5. get the author and quote elements
+  const quoteElement = screen.getByTestId("quote")
+  const authorElement = screen.getByTestId("author")
+
+  // 6. assert!
+  // let's make the tests fail first so they shouldn't equal
+  // the first QUOTE and AUTHOR because we loaded a new
+  // response
+  // expect(quoteElement).toHaveTextContent(QUOTE)
+  // expect(authorElement).toHaveTextContent(AUTHOR)
+  // the above fails as expected
+  expect(quoteElement).toHaveTextContent(NEW_QUOTE)
+  expect(authorElement).toHaveTextContent(NEW_AUTHOR)
+})
