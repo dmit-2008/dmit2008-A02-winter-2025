@@ -36,9 +36,30 @@ import { http, HttpResponse } from 'msw'
 
 import { setupServer } from 'msw/node'
 
+// have a quote that we're defining
+// we're setting this up here because we're going to use
+// it later one.
+const QUOTE = "I am not a demon."
+const AUTHOR = "Nicholas Cage"
 
 // set up the mock endpoints
-
+// in here we're going to create all of our
+// mock endpoints we have a single mock endpoint
+// in this application we're going to mock
+// this is in `utils/api/quote`
+const server = setupServer(
+  // this will take one to as many endpoints as
+  // arguments that you'd like.
+  http.get(
+    `${BASE_URL}/api/random_quote`, // this is the path to mock
+    () => { // this will be the mock response.
+      return HttpResponse.json({
+        quote: "",
+        author: ""
+      })
+    }
+  )
+)
 
 
 // run the server before all of the tests
