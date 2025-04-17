@@ -77,4 +77,16 @@ afterAll(()=> {
 
 // we're going to perform two tests
 // 1. check that quote loads on mount
+it("should load a quote when page is loaded.", async ()=> {
+  // we're doing a complex state change on mount
+  await act(()=> {
+    render(<Home />)
+  })
+  // we're going to get the elements containing the quote and author
+
+  // check that they have the expected quote!
+
+
+
+})
 // 2. we're going to check a new quote is loaded when button is clicked.
