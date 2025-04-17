@@ -54,8 +54,8 @@ const server = setupServer(
     `${BASE_URL}/api/random_quote`, // this is the path to mock
     () => { // this will be the mock response.
       return HttpResponse.json({
-        quote: "",
-        author: ""
+        quote: QUOTE,
+        author: AUTHOR
       })
     }
   )
