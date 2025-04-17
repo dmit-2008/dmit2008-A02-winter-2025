@@ -61,11 +61,19 @@ const server = setupServer(
   )
 )
 
-
+// using the one time setup, docs here: https://jestjs.io/docs/setup-teardown#one-time-setup
+// we'ere going to:
 // run the server before all of the tests
-
+beforeAll(()=> {
+  // this is going to make it so server will intercept
+  // the requests
+  server.listen()
+})
 // close the server after all of the tests
-
+afterAll(()=> {
+  // turns off the server after the tests are done.
+  server.close()
+})
 
 // we're going to perform two tests
 // 1. check that quote loads on mount
