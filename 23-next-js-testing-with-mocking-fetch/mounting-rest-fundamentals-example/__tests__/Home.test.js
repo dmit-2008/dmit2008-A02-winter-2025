@@ -83,10 +83,16 @@ it("should load a quote when page is loaded.", async ()=> {
     render(<Home />)
   })
   // we're going to get the elements containing the quote and author
+  // docs: https://testing-library.com/docs/queries/bytestid
+  const quoteElement = screen.getByTestId("quote")
+  const authorElement = screen.getByTestId("author")
 
   // check that they have the expected quote!
-
-
-
+  // let's make this test fail first
+  // expect(quoteElement).not.toHaveTextContent(QUOTE)
+  // remeber that toHaveTextContent is from testing library jest dom
+  // the above test fails lets make them pass
+  expect(quoteElement).toHaveTextContent(QUOTE)
+  expect(authorElement).toHaveTextContent(AUTHOR)
 })
 // 2. we're going to check a new quote is loaded when button is clicked.
