@@ -5,6 +5,10 @@
 //    a hook to simplify how we use this code.
 
 // we're going to wrap our app using this AppNotification
+// everything will be rendered the same way
 export default function AppNotification({children}) {
 
+  return <>
+    {children}
+  </>
 }
