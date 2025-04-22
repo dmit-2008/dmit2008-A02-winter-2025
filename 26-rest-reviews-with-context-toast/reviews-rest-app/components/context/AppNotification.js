@@ -13,12 +13,11 @@ import Alert from '@mui/material/Alert';
 // this is going to "hold" the shared state.
 export const AppNotificationContext = createContext({})
 
-
 // we're going to wrap our app using this AppNotification
 // everything will be rendered the same way
 export default function AppNotification({children}) {
   // to debug and show the snackbar set it to true.
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   // we want to change the type of method and we want to change
   // the message value.
   const [messageSeverity, setMessageSeverity] = useState("info")
@@ -28,7 +27,7 @@ export default function AppNotification({children}) {
   // and set the text and severity thie will be with "message" and "type" respectively
   const show = ({message, type}) => {
     setMessageSeverity(type)
-    setText(text)
+    setText(message)
 
     setOpen(true)
   }
