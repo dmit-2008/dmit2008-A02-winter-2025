@@ -9,14 +9,23 @@ import NavBar from '../components/NavBar'
 import SEO from '../components/SEO'
 
 // we're going to import AppNotificationContext
-import { AppNotificationContext } from '../components/context/AppNotification';
+import {
+  AppNotificationContext,
+  useNotification
+
+} from '../components/context/AppNotification';
 
 import { getReviews } from '../utils/api/reviews'
 
 export default function Home() {
   const [reviews, setReviews] = useState([])
   // the same way we have reviews we're going to use context
+  // the old way of using the context
   const {show} = useContext(AppNotificationContext)
+  // the exact same as above except we are
+  // using our own hook
+  const notification = useNotification()
+
 
   useEffect(()=> {
     loadAllReviews()
@@ -37,7 +46,7 @@ export default function Home() {
     getReviews().then((data)=> {
       setReviews(data)
       // we can just use show as a oneline
-      show({
+      notification.show({
         message: "Reviews loaded successfully",
         type: "info"
       })

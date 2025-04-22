@@ -8,15 +8,24 @@ import IconButton from '@mui/material/IconButton';
 
 import Typography from '@mui/material/Typography';
 
+import { useNotification } from './context/AppNotification';
 
 import { deleteReview } from '../utils/api/reviews';
 
 export default function AdaptationReviewCard(props) {
+  const notification = useNotification()
+
   const removeCurrentReview = () => {
     deleteReview(props.id).then((data)=> {
       props.removeReview(props.id)
     })
+    notification.show({
+      message: `"${props.title}" removed`,
+      type: "success"
+    })
   }
+
+
 
   return <Card sx={{mt: 2 }}>
     <CardHeader
@@ -25,7 +34,7 @@ export default function AdaptationReviewCard(props) {
           {props.rating}
         </Avatar>
       }
-      
+
       action={
         <IconButton onClick={removeCurrentReview}>
           <DeleteIcon />
@@ -37,12 +46,12 @@ export default function AdaptationReviewCard(props) {
           {props.title}
         </Typography>
       }
-      
+
     />
     <CardContent>
       <Typography variant="body2" color="text.secondary">
         {props.comment}
       </Typography>
     </CardContent>
-  </Card> 
+  </Card>
 }

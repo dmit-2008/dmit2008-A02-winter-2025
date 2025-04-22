@@ -3,15 +3,27 @@
 //    sometimes called "toast" message
 // 2. create the context in here and we're going to create
 //    a hook to simplify how we use this code.
-import {useState, createContext} from "react"
+import {useState, createContext, useContext} from "react"
 
-import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
 // we're also going to export the context
 // this is going to "hold" the shared state.
 export const AppNotificationContext = createContext({})
+
+// create our own hook.
+export const useNotification = () => {
+  // you can use other hooks inside of your created hook.
+  // this will have the context of the application
+  const context = useContext(AppNotificationContext)
+  // handle the case if it's not in the provider
+  if (!context) {
+    throw new Error("useNotification needs to be in a `AppNotification` context")
+  }
+  return context
+}
+
 
 // we're going to wrap our app using this AppNotification
 // everything will be rendered the same way
@@ -28,7 +40,6 @@ export default function AppNotification({children}) {
   const show = ({message, type}) => {
     setMessageSeverity(type)
     setText(message)
-
     setOpen(true)
   }
 
