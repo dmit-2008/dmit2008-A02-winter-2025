@@ -14,6 +14,10 @@ import Alert from '@mui/material/Alert';
 export default function AppNotification({children}) {
   // to debug and show the snackbar set it to true.
   const [open, setOpen] = useState(true);
+  // we want to change the type of method and we want to change
+  // the message value.
+  const [messageSeverity, setMessageSeverity] = useState("info")
+  const [text, setText] = useState("")
 
   // needed to handle our snackbar
   const handleClose = (event, reason) => {
@@ -36,11 +40,11 @@ export default function AppNotification({children}) {
     <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert
           onClose={handleClose}
-          severity="success"
+          severity={messageSeverity}
           variant="filled"
           sx={{ width: '100%' }}
         >
-          This is a success Alert inside a Snackbar!
+          {text}
         </Alert>
       </Snackbar>
   </>
