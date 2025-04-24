@@ -11,7 +11,7 @@ import { useAuth } from './state/AuthProvider';
 export default function NavBar(props) {
   const router = useRouter()
   /* import isAuthenticated and signOut context here. */
-  const {isAuthenticated} = useAuth()
+  const {isAuthenticated, signOut} = useAuth()
 
   return <AppBar position="static" sx={{marginBottom: "1rem"}}>
     <Toolbar>
@@ -35,7 +35,9 @@ export default function NavBar(props) {
           </Typography>
           <Typography
             variant="h6"
-            component="div" >
+            component="div"
+            onClick={signOut}
+          >
             Sign out
           </Typography>
         </>

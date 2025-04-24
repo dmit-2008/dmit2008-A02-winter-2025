@@ -1,5 +1,6 @@
 import {useState, useContext, createContext} from 'react'
 // this is going to keep the state of all of the tokens once you login.
+import { useRouter } from 'next/router'
 
 import { login } from '@/utils/api/auth'
 
@@ -24,6 +25,8 @@ export default function AuthProvider({children}) {
   const [user, setUser] = useState()
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
+  const router = useRouter()
+
   // 5. create a sign in system that will login into the backend
   //    and also create some state so that you can see it.
   const signIn = async ({email, password}) => {
@@ -36,13 +39,22 @@ export default function AuthProvider({children}) {
     setIsAuthenticated(true)
   }
 
+  // 7. let's create a signout
+  const signOut = () => {
+    // all we're going to do is clear the state
+    router.push("/login")
+    setToken()
+    setUser()
+    setIsAuthenticated(false)
+  }
+
 
   // 3. let's create a provider
   return <AuthContext.Provider value={{
     // some values used by child component will be as follows
     token, user, isAuthenticated,
     // make the following functions available as well.
-    signIn
+    signIn, signOut
   }}>
 
     {children}
