@@ -8,7 +8,7 @@ export const AppNotificationContext = createContext({})
 export function useNotification() {
   const context = useContext(AppNotificationContext)
   if (!context) {
-    throw new Error(`useCount must be used within a AppNotification`)
+    throw new Error(`useNotification must be used within a AppNotification`)
   }
   return context
 }
